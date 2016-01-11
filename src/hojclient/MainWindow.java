@@ -5,6 +5,9 @@
  */
 package hojclient;
 
+import java.rmi.Naming;
+import java.rmi.RMISecurityManager;
+
 /**
  *
  * @author jaanle
@@ -17,7 +20,9 @@ public class MainWindow extends javax.swing.JFrame {
     public MainWindow() {
         initComponents();
     }
-
+    
+    private Laitos laitos;
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1087,12 +1092,18 @@ public class MainWindow extends javax.swing.JFrame {
 
     /**
      * Ensimmäinen yhteydenotto asiakkaalta palvelimelle
-     * Ottaa yhteyden palvelimeen, lähettää Juomamestari-olion palvelimelle
+     * Luo asiakkaalle edustaqjaolion palvelimen viinatehtaasta
      * @param evt 
      */
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
         Juomamestari jm=new Juomamestari(userName.getText());
-        
+        System.setSecurityManager(new RMISecurityManager());
+        try{
+            laitos = (Laitos)Naming.lookup("rmi://localhost/viinathdas");
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_signInActionPerformed
 
     private void startProcLoad1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad1ActionPerformed
@@ -1208,9 +1219,9 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_procLoadAmount1ActionPerformed
 
     /**
-     * @param args the command line arguments
+     * 
      */
-    public static void main(String args[]) {
+    public static void kaynnista() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

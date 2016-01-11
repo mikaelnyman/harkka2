@@ -6,11 +6,14 @@
 
 package hojclient;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
 /**
  * Esittää koko laitosta ja sisältää kaikki osat
  * @author Mikael
  */
-public class Laitos {
+public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
     /**
      * Siilon täyttö
      */
@@ -46,7 +49,7 @@ public class Laitos {
      */
     private Pumppu[] pullotuspumput;
     
-    public Laitos(Ruuvikuljetin r1, Siilo[] s, Ruuvikuljetin[] r2, Juomakeitin[] j, Pumppu[] p1, Kypsytyssailio[] k, Pumppu[] p2){
+    public Laitos(Ruuvikuljetin r1, Siilo[] s, Ruuvikuljetin[] r2, Juomakeitin[] j, Pumppu[] p1, Kypsytyssailio[] k, Pumppu[] p2) throws RemoteException{
         rk=r1;
         siilot=s;
         raakaAineKuljettimet=r2;
