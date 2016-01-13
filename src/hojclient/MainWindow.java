@@ -7,6 +7,7 @@ package hojclient;
 
 import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
+import java.rmi.RemoteException;
 
 /**
  *
@@ -1096,7 +1097,12 @@ public class MainWindow extends javax.swing.JFrame {
      * @param evt 
      */
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
-        Juomamestari jm=new Juomamestari(userName.getText());
+        try {
+			JuomamestariImplementaatio jm=new JuomamestariImplementaatio(userName.getText());
+		} catch (RemoteException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
         System.setSecurityManager(new RMISecurityManager());
         try{
             laitos = (Laitos)Naming.lookup("rmi://localhost/viinathdas");
