@@ -58,4 +58,8 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
         sailiot=k;
         pullotuspumput=p2;
     }
+    /**
+     * Tänne tulee koko logiikka.
+     * Kaikki metodit pitää esitellä myös LaitosRajapinnassa.
+     */
 }
