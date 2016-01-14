@@ -12,7 +12,6 @@ package hojclient;
 public class Testi {
     public static void main(String[] args){
         Palvelin.kaynnista();
-        MainWindow.kaynnista();
+//        MainWindow.kaynnista();
     }
-    
 }
