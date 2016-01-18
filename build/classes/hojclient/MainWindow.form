@@ -181,7 +181,7 @@
         <Component class="javax.swing.JLabel" name="silo1Status">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="text" type="java.lang.String" value="?"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[100, 200]"/>
             </Property>
@@ -391,7 +391,7 @@
                       <Component id="tank7Status" alignment="2" min="-2" pref="73" max="-2" attributes="0"/>
                       <Component id="reserveTank7" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="tank8Label" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="tank8Status" alignment="2" pref="77" max="32767" attributes="0"/>
+                      <Component id="tank8Status" alignment="2" pref="0" max="32767" attributes="0"/>
                       <Component id="reserveTank8" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="tank9Label" alignment="2" min="-2" pref="73" max="-2" attributes="0"/>
                       <Component id="tank9Status" alignment="2" min="-2" pref="73" max="-2" attributes="0"/>
@@ -1068,7 +1068,7 @@
                       <Component id="startSiloLoad" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="siloLoadConvStatus" alignment="2" min="-2" pref="53" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="11" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -1077,7 +1077,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="siloLoadLabel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="7" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="siloLoadConvStatus" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="startSiloLoad" min="-2" max="-2" attributes="0"/>
