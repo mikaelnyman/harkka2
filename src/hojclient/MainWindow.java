@@ -8,6 +8,8 @@ package hojclient;
 import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,6 +25,9 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private Laitos laitos;
+    private Juomamestari jm;
+    private boolean kirjautunut=false;
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -144,7 +149,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         silo1Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        silo1Status.setText("0");
+        silo1Status.setText("?");
         silo1Status.setMaximumSize(new java.awt.Dimension(100, 200));
         silo1Status.setMinimumSize(new java.awt.Dimension(100, 20));
         silo1Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -528,7 +533,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(tank7Status, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(reserveTank7)
                     .addComponent(tank8Label)
-                    .addComponent(tank8Status, javax.swing.GroupLayout.PREFERRED_SIZE, 77, Short.MAX_VALUE)
+                    .addComponent(tank8Status, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                     .addComponent(reserveTank8)
                     .addComponent(tank9Label, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tank9Status, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -781,14 +786,14 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(siloLoadLabel)
                     .addComponent(startSiloLoad)
                     .addComponent(siloLoadConvStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         siloLoadPanelLayout.setVerticalGroup(
             siloLoadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, siloLoadPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(siloLoadLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(siloLoadConvStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(startSiloLoad)
@@ -1087,8 +1092,49 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void paivitaKayttoliittyma(){
+        String[] tila;
+        try {
+            tila = laitos.annaTiedot();
+            siloLoadConvStatus.setText(Boolean.parseBoolean(tila[0])?"Running":"Standby");
+            silo1Status.setText(tila[1]);       //TODO: mitä jos ei varaajaa 
+            silo2Status.setText(tila[2]);
+            silo3Status.setText(tila[3]);
+            silo4Status.setText(tila[4]);
+            //Todo lisää siilojen varaajat käyttöliittymään
+            ProcLoadConvStatus1.setText(Boolean.parseBoolean(tila[9])?"Running":"Standby");
+            procLoadConvStatus2.setText(Boolean.parseBoolean(tila[10])?"Running":"Standby");
+            proc1User.setText(tila[11]);
+            proc2User.setText(tila[12]);
+            proc3User.setText(tila[13]);
+            proc1Status.setText(Boolean.parseBoolean(tila[14])?"Running":"Standby");
+            proc2Status.setText(Boolean.parseBoolean(tila[15])?"Running":"Standby");
+            proc3Status.setText(Boolean.parseBoolean(tila[16])?"Running":"Standby");
+            pump1Status.setText(Boolean.parseBoolean(tila[17])?"Running":"Standby");
+            pump2Status.setText(Boolean.parseBoolean(tila[18])?"Running":"Standby");
+            tank1Status.setText(tila[19]);
+            tank2Status.setText(tila[20]);
+            tank3Status.setText(tila[21]);
+            tank4Status.setText(tila[22]);
+            tank5Status.setText(tila[23]);
+            tank6Status.setText(tila[24]);
+            tank7Status.setText(tila[25]);
+            tank8Status.setText(tila[26]);
+            tank9Status.setText(tila[27]);
+            tank10Status.setText(tila[28]);
+            bpump1Status.setText(Boolean.parseBoolean(tila[29])?"Running":"Standby");
+            bpump2Status.setText(Boolean.parseBoolean(tila[30])?"Running":"Standby");
+         } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     private void startSiloLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startSiloLoadActionPerformed
-        // TODO Mitä tehdään, kun siilojen täytön ruuvikuljetin käynnistetään?
+        try {
+            laitos.taytaSiilot(jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_startSiloLoadActionPerformed
 
     /**
@@ -1097,123 +1143,232 @@ public class MainWindow extends javax.swing.JFrame {
      * @param evt 
      */
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
-        try {
-			JuomamestariImplementaatio jm=new JuomamestariImplementaatio(userName.getText());
-		} catch (RemoteException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-        System.setSecurityManager(new RMISecurityManager());
-        try{
-            laitos = (Laitos)Naming.lookup("rmi://localhost/viinathdas");
-        }
-        catch(Exception e){
-            System.out.println(e.getMessage());
-        }
+       if(!kirjautunut){
+            jm=new Juomamestari(userName.getText());
+            System.setSecurityManager(new RMISecurityManager());
+            try{
+                laitos = (Laitos)Naming.lookup("rmi://localhost/viinathdas");
+                kirjautunut=true;
+                System.out.println(laitos.annaTiedot()[0]);
+//                Paivittaja p = new Paivittaja(this);
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+            }
+       }
     }//GEN-LAST:event_signInActionPerformed
 
     private void startProcLoad1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad1ActionPerformed
-        // TODO Mitä tehdään kun keittimen täytön ruuvikuljetin 1 käynnistetään
+        try {
+            laitos.taytaJuomakeitin(0,jm,Integer.parseInt(procLoadAmount1.getText()));
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_startProcLoad1ActionPerformed
 
     private void startProcLoad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad2ActionPerformed
-        // TODO Mitä tehdään kun keittimen täytön ruuvikuljetin 1 käynnistetään
+        try {
+            laitos.taytaJuomakeitin(1,jm,Integer.parseInt(procLoadAmount1.getText()));
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_startProcLoad2ActionPerformed
 
     private void reserveSilo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo1ActionPerformed
-        // TODO Mitä tehdään kun siilo1 varataan?
+        try {
+            if(laitos==null){
+                System.out.println("Laitos on null");
+            }
+            else{
+                laitos.varaaSiilo(0, jm);
+            }
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveSilo1ActionPerformed
 
     private void reserveSilo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo2ActionPerformed
-        // TODO Mitä tehdään kun siilo2 varataan?
+        try {
+            laitos.varaaSiilo(1, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveSilo2ActionPerformed
 
     private void reserveSilo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo3ActionPerformed
-        // TODO Mitä tehdään kun siilo3 varataan?
+        try {
+            laitos.varaaSiilo(2, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveSilo3ActionPerformed
 
     private void reserveSilo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo4ActionPerformed
-        // TODO Mitä tehdään kun siilo4 varataan?
+        try {
+            laitos.varaaSiilo(3, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveSilo4ActionPerformed
 
     private void reserveProc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc1ActionPerformed
-        // TODO Mitä tehdään kun keitin1 varataan?
+        try {
+            laitos.varaaJuomakeitin(0, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveProc1ActionPerformed
 
     private void startProc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc1ActionPerformed
-        // TODO Mitä tehdään kun keitin1 käynnistetään?
+        try {
+            laitos.kypsyta(0, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_startProc1ActionPerformed
 
     private void reserveProc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc2ActionPerformed
-        // TODO Mitä tehdään kun keitin2 varataan?
+        try {
+            laitos.varaaJuomakeitin(1, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveProc2ActionPerformed
 
     private void startProc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc2ActionPerformed
-        // TODO Mitä tehdään kun keitin2 käynnistetään?
+        try {
+            laitos.kypsyta(1, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_startProc2ActionPerformed
 
     private void reserveProc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc3ActionPerformed
-        // TODO Mitä tehdään kun keitin3 varataan?
+        try {
+            laitos.varaaJuomakeitin(2, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }//GEN-LAST:event_reserveProc3ActionPerformed
 
     private void startProc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc3ActionPerformed
-        // TODO Mitä tehdään kun keitin3 käynnistetään?
+        try {
+            laitos.kypsyta(2, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_startProc3ActionPerformed
 
     private void startPump1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPump1ActionPerformed
-        // TODO Mitä tehdään kun pumppu1 käynnistetään?
+        try {
+            laitos.pumppaa(0,jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_startPump1ActionPerformed
 
     private void startPump2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPump2ActionPerformed
-        // TODO Mitä tehdään kun pumppu2 käynnistetään?
+        try {
+            laitos.pumppaa(1,jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_startPump2ActionPerformed
 
     private void startBpump1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBpump1ActionPerformed
-        // TODO Mitä tehdään kun pumppu1 pullotukseen käynnistetään?
+        try {
+            laitos.pullota(0,jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_startBpump1ActionPerformed
 
     private void startBpump2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBpump2ActionPerformed
-        // TODO Mitä tehdään kun pumppu2 pullotukseen käynnistetään?
+        try {
+            laitos.pullota(1,jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_startBpump2ActionPerformed
 
     private void reserveTank1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank1ActionPerformed
-        // TODO Mitä tehdään kun säiliö1 varataan?
+        try {
+            laitos.varaaKypsytyssailio(0, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveTank1ActionPerformed
 
     private void reserveTank2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank2ActionPerformed
-        // TODO Mitä tehdään kun säiliö2 varataan?
+        try {
+            laitos.varaaKypsytyssailio(1, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveTank2ActionPerformed
 
     private void reserveTank3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank3ActionPerformed
-        // TODO Mitä tehdään kun säiliö3 varataan?
+        try {
+            laitos.varaaKypsytyssailio(2, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveTank3ActionPerformed
 
     private void reserveTank4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank4ActionPerformed
-        // TODO Mitä tehdään kun säiliö4 varataan?
+        try {
+            laitos.varaaKypsytyssailio(3, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveTank4ActionPerformed
 
     private void reserveTank5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank5ActionPerformed
-        // TODO Mitä tehdään kun säiliö5 varataan?
+        try {
+            laitos.varaaKypsytyssailio(4, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveTank5ActionPerformed
 
     private void reserveTank6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank6ActionPerformed
-        // TODO Mitä tehdään kun säiliö6 varataan?
+        try {
+            laitos.varaaKypsytyssailio(5, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveTank6ActionPerformed
 
     private void reserveTank7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank7ActionPerformed
-        // TODO Mitä tehdään kun säiliö7 varataan?
+        try {
+            laitos.varaaKypsytyssailio(6, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveTank7ActionPerformed
 
     private void reserveTank8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank8ActionPerformed
-        // TODO Mitä tehdään kun säiliö8 varataan?
+        try {
+            laitos.varaaKypsytyssailio(7, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveTank8ActionPerformed
 
     private void reserveTank9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank9ActionPerformed
-        // TODO Mitä tehdään kun säiliö9 varataan?
+        try {
+            laitos.varaaKypsytyssailio(8, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveTank9ActionPerformed
 
     private void reserveTank10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank10ActionPerformed
-        // TODO Mitä tehdään kun säiliö10 varataan?
+        try {
+            laitos.varaaKypsytyssailio(9, jm);
+        } catch (RemoteException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_reserveTank10ActionPerformed
 
     private void procLoadAmount2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procLoadAmount2ActionPerformed
@@ -1251,7 +1406,14 @@ public class MainWindow extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the form 
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                MainWindow mw=new MainWindow();
+                mw.setVisible(true);
+            }
+        });
+        */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainWindow().setVisible(true);
