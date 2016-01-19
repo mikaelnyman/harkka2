@@ -1,6 +1,8 @@
 package hojclient;
 
-public class Juomamestari {
+import java.io.Serializable;
+
+public class Juomamestari implements Serializable{
 	private String nimi;
 	public Juomamestari(String n)
 	{
