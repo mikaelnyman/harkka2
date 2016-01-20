@@ -8,6 +8,8 @@ package hojclient;
 import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -1145,9 +1147,10 @@ public class MainWindow extends javax.swing.JFrame {
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
        if(!kirjautunut){
             jm=new Juomamestari(userName.getText());
-            System.setSecurityManager(new RMISecurityManager());
+            String RMIosoite ="viinatehdas";
             try{
-                laitos = (Laitos)Naming.lookup("rmi://localhost/viinathdas");
+                Registry registry = LocateRegistry.getRegistry(2016);
+                laitos = (Laitos) registry.lookup(RMIosoite);
                 kirjautunut=true;
                 System.out.println(laitos.annaTiedot()[0]);
 //                Paivittaja p = new Paivittaja(this);
