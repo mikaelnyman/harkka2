@@ -20,13 +20,13 @@ public class Paivittaja extends Thread{
     }
     @Override
     public void run(){
-    while (true){  
-        nimi.paivitaKayttoliittyma();
-        try {
-            sleep(1000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Paivittaja.class.getName()).log(Level.SEVERE, null, ex);
+        while(true){  
+            nimi.paivitaKayttoliittyma();
+            try {
+                sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Paivittaja.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-    }
     }
 }

@@ -12,8 +12,7 @@ import hojserver.Palvelin;
  * @author Mikael, Josia, Lassi
  */
 public class Testi {
-    public static void main(String[] args){
-        
+    public static void main(String[] args){        
         Palvelin.kaynnista();
         MainWindow.main(null);
     }

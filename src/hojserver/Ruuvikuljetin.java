@@ -20,14 +20,27 @@ public class Ruuvikuljetin {
         return paalla;
     }
 
-    public void kaynnista(int maara) {
-//        this.paalla = true;
+    public void kaynnista(Siilo s,int maara) {
         try {
-            Thread.sleep(maara/KULJETUSNOPEUS*1000);
-        } catch (InterruptedException ex) {
+            new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println("Täyttö alkaa");
+                    try {
+                        for(int i=0;i<maara/KULJETUSNOPEUS*1000;i+=100){
+                            Thread.sleep(100);
+                            s.setTayttoaste((int)Math.round(s.getTayttoaste()+KULJETUSNOPEUS*0.1));
+                        }
+                        System.out.println("Täyttö päättyy ja säiliössä on "+s.getTayttoaste());
+                    } catch (InterruptedException ex) {
+                        System.out.println("Täyttö keskeytyi epäonnistuneesti");
+                        Logger.getLogger(Ruuvikuljetin.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }.run();
+        } catch (Exception ex) {
             Logger.getLogger(Ruuvikuljetin.class.getName()).log(Level.SEVERE, null, ex);
         }
-//        this.paalla=false;
     }
 
     public void setPaalla(boolean paalla) {

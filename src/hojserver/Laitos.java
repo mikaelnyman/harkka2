@@ -8,6 +8,8 @@ package hojserver;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Esittää koko laitosta ja sisältää kaikki osat
@@ -67,7 +69,6 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
      */
     @Override
     public String[] annaTiedot() throws RemoteException{
-        System.out.println("annaTiedot()");
         String[] str = new String[]{
             String.valueOf(rk.isPaalla()),
             String.valueOf(siilot[0].getTayttoaste()),
@@ -100,14 +101,12 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
             String.valueOf(sailiot[9].getTayttoaste()),
             String.valueOf(pullotuspumput[0].isPaalla()),
             String.valueOf(pullotuspumput[1].isPaalla())};
-         System.out.println(str.length);
          return str;
     }
     
     @Override
     public void taytaSiilot(Juomamestari jm) throws RemoteException
     {
-        
         for(Siilo s:siilot){
             if(s.getVaraaja()==null){
                 s.setVaraaja(jm);
@@ -118,7 +117,7 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
                 s.setOperaatio(true);
                 int x=s.getMAXMAARA()-s.getTayttoaste();
                 rk.setPaalla(true);
-                rk.kaynnista(x);
+                rk.kaynnista(s,x);
                 rk.setPaalla(false);
                 s.setTayttoaste(s.getMAXMAARA());
                 s.setVaraaja(null);
@@ -126,6 +125,7 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
             }
         }
     }
+    
     @Override
     public void varaaSiilo(int a, Juomamestari jm) throws RemoteException
     {
@@ -160,7 +160,7 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
                     for(Juomakeitin k:keittimet){
                         if(k.getVaraaja() != null && k.getVaraaja().equals(jm) && k.getTayttoaste()==0){
                             int x = Math.min(Math.min(maara, s.getTayttoaste()), k.getMAXMAARA());
-                            raakaAineKuljettimet[a].kaynnista(x);
+                            raakaAineKuljettimet[a].kaynnista(s,x);
                             s.setTayttoaste(s.getTayttoaste()-x);
                             k.setTayttoaste(x);
                             if (s.getTayttoaste()==0){
@@ -224,25 +224,13 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
      * @return 
      */
     @Override
-    public String[] testi(){
-        String[] s=new String[]{"Moro","Jees"};
-        //for(int i=0;i<4;i++){
-        //    s[i] = siilot[i].getVaraaja().toString();
-        //    System.out.println("Siilon " + i + " varaaja? "+s[i]);
-        //}
-        
-        /**
-        System.out.println(rk.isPaalla()+String.valueOf(siilot[0].getTayttoaste())+String.valueOf(siilot[1].getTayttoaste())+
-             String.valueOf(siilot[2].getTayttoaste())+String.valueOf(siilot[3].getTayttoaste())+siilot[0].getVaraaja().toString()+siilot[1].getVaraaja().toString()+
-             siilot[2].getVaraaja().toString()+siilot[3].getVaraaja().toString()+String.valueOf(raakaAineKuljettimet[0].isPaalla())+
-            String.valueOf(raakaAineKuljettimet[1].isPaalla())+keittimet[0].getVaraaja().toString()+keittimet[1].getVaraaja().toString() +
-             keittimet[2].getVaraaja().toString()+String.valueOf(keittimet[0].isPaalla())+String.valueOf(keittimet[1].isPaalla()) +
-             String.valueOf(keittimet[2].isPaalla())+String.valueOf(pumput[0].isPaalla())+String.valueOf(pumput[1].isPaalla())+
-             String.valueOf(sailiot[0].getTayttoaste())+String.valueOf(sailiot[1].getTayttoaste())+String.valueOf(sailiot[2].getTayttoaste()) +
-             String.valueOf(sailiot[3].getTayttoaste())+String.valueOf(sailiot[4].getTayttoaste())+String.valueOf(sailiot[5].getTayttoaste()) +
-             String.valueOf(sailiot[6].getTayttoaste())+String.valueOf(sailiot[7].getTayttoaste())+String.valueOf(sailiot[8].getTayttoaste()) +
-             String.valueOf(sailiot[9].getTayttoaste())+String.valueOf(pullotuspumput[0].isPaalla())+String.valueOf(pullotuspumput[1].isPaalla()));
-             */
-        return s;
+    public void testi(){
+        try {
+            //rk.kaynnista(siilot[0], 1000);
+            taytaSiilot(new Juomamestari("asdasd"));
+        } catch (RemoteException ex) {
+            System.err.println("asdasdasd");
+            Logger.getLogger(Laitos.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

@@ -7,8 +7,6 @@ package hojclient;
 
 import hojserver.LaitosRajapinta;
 import hojserver.Juomamestari;
-import java.rmi.Naming;
-import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -31,7 +29,7 @@ public class MainWindow extends javax.swing.JFrame {
     private LaitosRajapinta laitos;
     private Juomamestari jm;
     private boolean kirjautunut=false;
-    
+    private Paivittaja paivittaja;
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -133,7 +131,6 @@ public class MainWindow extends javax.swing.JFrame {
         procLoadLabel2 = new javax.swing.JLabel();
         procLoadAmount1 = new javax.swing.JTextField();
         procLoadAmount2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1036,35 +1033,24 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(siloLoadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(48, 48, 48)))
+                        .addGap(48, 48, 48)
+                        .addComponent(siloLoadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(siloPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(procLoadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)))
+                        .addGap(35, 35, 35))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)))
                 .addComponent(procPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(pumpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1081,15 +1067,13 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(siloPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(217, 217, 217)
-                                .addComponent(siloLoadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1))))
+                                .addComponent(siloLoadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(228, 228, 228)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1114,7 +1098,6 @@ public class MainWindow extends javax.swing.JFrame {
     public void paivitaKayttoliittyma(){
         String[] tila;
         try {
-            System.out.println("Käyttöliittymää päivitetään");
             tila = laitos.annaTiedot();
             if(tila==null){
                 System.out.println("Laitos ei antanut tietoja");
@@ -1169,7 +1152,7 @@ public class MainWindow extends javax.swing.JFrame {
      * @param evt 
      */
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
-       if(!kirjautunut){
+        if(!kirjautunut){
             jm=new Juomamestari(userName.getText());
             String RMIosoite ="Laitos";
             try{
@@ -1178,19 +1161,8 @@ public class MainWindow extends javax.swing.JFrame {
                 System.out.println("Laitosta yritetty luoda");
                 kirjautunut=true;
                 if (laitos!=null){
-                    System.out.println("Printatataan laitos "+laitos);
-                    System.out.println("Printataan testi "+laitos.testi()[0]);
-                    String[] str=laitos.annaTiedot();
-                    if(str==null){
-                        System.out.println("pöö");
-                    }
-                    else{
-                        for(int i=0;i<20;i++){
-                            System.out.println("Laitoksen pitäisi toimii");
-                            System.out.println(str[i]);
-                        }
-                    }
-                    Paivittaja p = new Paivittaja(this);
+                    paivittaja = new Paivittaja(this);
+                    paivittaja.start();
                 }else{
                     System.out.println("Laitos ei toimi");
                 }
@@ -1198,7 +1170,7 @@ public class MainWindow extends javax.swing.JFrame {
             catch(Exception e){
                 System.out.println(e.getMessage());
             }
-       }
+        }
     }//GEN-LAST:event_signInActionPerformed
 
     private void startProcLoad1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad1ActionPerformed
@@ -1422,11 +1394,6 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_procLoadAmount1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        paivitaKayttoliittyma();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * 
      */
@@ -1476,7 +1443,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel bpump2Label;
     private javax.swing.JLabel bpump2Status;
     private javax.swing.JPanel bpumpPanel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JLabel proc1Label;
     private javax.swing.JLabel proc1Status;
