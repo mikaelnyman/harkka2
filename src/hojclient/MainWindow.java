@@ -133,6 +133,7 @@ public class MainWindow extends javax.swing.JFrame {
         procLoadLabel2 = new javax.swing.JLabel();
         procLoadAmount1 = new javax.swing.JTextField();
         procLoadAmount2 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1035,6 +1036,13 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1046,8 +1054,13 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(47, 47, 47))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(siloLoadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(siloLoadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(48, 48, 48)))
                         .addComponent(siloPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(procLoadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1068,13 +1081,15 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(siloPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(217, 217, 217)
-                                .addComponent(siloLoadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(siloLoadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(228, 228, 228)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1099,7 +1114,11 @@ public class MainWindow extends javax.swing.JFrame {
     public void paivitaKayttoliittyma(){
         String[] tila;
         try {
+            System.out.println("Käyttöliittymää päivitetään");
             tila = laitos.annaTiedot();
+            if(tila==null){
+                System.out.println("Laitos ei antanut tietoja");
+            }
             siloLoadConvStatus.setText(Boolean.parseBoolean(tila[0])?"Running":"Standby");
             silo1Status.setText(tila[1]);       //TODO: mitä jos ei varaajaa 
             silo2Status.setText(tila[2]);
@@ -1128,7 +1147,10 @@ public class MainWindow extends javax.swing.JFrame {
             tank10Status.setText(tila[28]);
             bpump1Status.setText(Boolean.parseBoolean(tila[29])?"Running":"Standby");
             bpump2Status.setText(Boolean.parseBoolean(tila[30])?"Running":"Standby");
-         } catch (RemoteException ex) {
+        } 
+        catch (RemoteException ex) {
+            System.out.println("Virhe käyttöliittymän päivityksessä");
+            System.out.println(ex.getMessage());
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -1156,18 +1178,18 @@ public class MainWindow extends javax.swing.JFrame {
                 System.out.println("Laitosta yritetty luoda");
                 kirjautunut=true;
                 if (laitos!=null){
-                    System.out.println(laitos);
-                   System.out.println(laitos.testi()[0]);
+                    System.out.println("Printatataan laitos "+laitos);
+                    System.out.println("Printataan testi "+laitos.testi()[0]);
                     String[] str=laitos.annaTiedot();
+                    if(str==null){
+                        System.out.println("pöö");
+                    }
+                    else{
                         for(int i=0;i<20;i++){
                             System.out.println("Laitoksen pitäisi toimii");
                             System.out.println(str[i]);
                         }
-                     
-                    if(str==null){
-                        System.out.println("pöö");
                     }
-                    
                     Paivittaja p = new Paivittaja(this);
                 }else{
                     System.out.println("Laitos ei toimi");
@@ -1400,6 +1422,11 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_procLoadAmount1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        paivitaKayttoliittyma();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * 
      */
@@ -1449,6 +1476,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel bpump2Label;
     private javax.swing.JLabel bpump2Status;
     private javax.swing.JPanel bpumpPanel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JLabel proc1Label;
     private javax.swing.JLabel proc1Status;

@@ -68,16 +68,38 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
     @Override
     public String[] annaTiedot() throws RemoteException{
         System.out.println("annaTiedot()");
-        String[] str = new String[]{String.valueOf(rk.isPaalla()),String.valueOf(siilot[0].getTayttoaste()),String.valueOf(siilot[1].getTayttoaste()),
-             String.valueOf(siilot[2].getTayttoaste()),String.valueOf(siilot[3].getTayttoaste()),siilot[0].getVaraaja().toString(),siilot[1].getVaraaja().toString(),
-             siilot[2].getVaraaja().toString(),siilot[3].getVaraaja().toString(),String.valueOf(raakaAineKuljettimet[0].isPaalla()),
-             String.valueOf(raakaAineKuljettimet[1].isPaalla()),keittimet[0].getVaraaja().toString(),keittimet[1].getVaraaja().toString(),
-             keittimet[2].getVaraaja().toString(),String.valueOf(keittimet[0].isPaalla()),String.valueOf(keittimet[1].isPaalla()),
-             String.valueOf(keittimet[2].isPaalla()),String.valueOf(pumput[0].isPaalla()),String.valueOf(pumput[1].isPaalla()),
-             String.valueOf(sailiot[0].getTayttoaste()),String.valueOf(sailiot[1].getTayttoaste()),String.valueOf(sailiot[2].getTayttoaste()),
-             String.valueOf(sailiot[3].getTayttoaste()),String.valueOf(sailiot[4].getTayttoaste()),String.valueOf(sailiot[5].getTayttoaste()),
-             String.valueOf(sailiot[6].getTayttoaste()),String.valueOf(sailiot[7].getTayttoaste()),String.valueOf(sailiot[8].getTayttoaste()),
-             String.valueOf(sailiot[9].getTayttoaste()),String.valueOf(pullotuspumput[0].isPaalla()),String.valueOf(pullotuspumput[1].isPaalla())};
+        String[] str = new String[]{
+            String.valueOf(rk.isPaalla()),
+            String.valueOf(siilot[0].getTayttoaste()),
+            String.valueOf(siilot[1].getTayttoaste()),
+            String.valueOf(siilot[2].getTayttoaste()),
+            String.valueOf(siilot[3].getTayttoaste()),
+            siilot[0].getVaraaja()!=null?siilot[0].getVaraaja().toString():null,
+            siilot[1].getVaraaja()!=null?siilot[1].getVaraaja().toString():null,
+            siilot[2].getVaraaja()!=null?siilot[2].getVaraaja().toString():null,
+            siilot[3].getVaraaja()!=null?siilot[3].getVaraaja().toString():null,
+            String.valueOf(raakaAineKuljettimet[0].isPaalla()),
+            String.valueOf(raakaAineKuljettimet[1].isPaalla()),
+            keittimet[0].getVaraaja()!=null?keittimet[0].getVaraaja().toString():null,
+            keittimet[1].getVaraaja()!=null?keittimet[1].getVaraaja().toString():null,
+            keittimet[2].getVaraaja()!=null?keittimet[2].getVaraaja().toString():null,
+            String.valueOf(keittimet[0].isPaalla()),
+            String.valueOf(keittimet[1].isPaalla()),
+            String.valueOf(keittimet[2].isPaalla()),
+            String.valueOf(pumput[0].isPaalla()),
+            String.valueOf(pumput[1].isPaalla()),
+            String.valueOf(sailiot[0].getTayttoaste()),
+            String.valueOf(sailiot[1].getTayttoaste()),
+            String.valueOf(sailiot[2].getTayttoaste()),
+            String.valueOf(sailiot[3].getTayttoaste()),
+            String.valueOf(sailiot[4].getTayttoaste()),
+            String.valueOf(sailiot[5].getTayttoaste()),
+            String.valueOf(sailiot[6].getTayttoaste()),
+            String.valueOf(sailiot[7].getTayttoaste()),
+            String.valueOf(sailiot[8].getTayttoaste()),
+            String.valueOf(sailiot[9].getTayttoaste()),
+            String.valueOf(pullotuspumput[0].isPaalla()),
+            String.valueOf(pullotuspumput[1].isPaalla())};
          System.out.println(str.length);
          return str;
     }
@@ -203,9 +225,12 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
      */
     @Override
     public String[] testi(){
-        System.out.println(rk.isPaalla());
-        String[] s=new String[2];
-        s[0]=null;
+        String[] s=new String[]{"Moro","Jees"};
+        //for(int i=0;i<4;i++){
+        //    s[i] = siilot[i].getVaraaja().toString();
+        //    System.out.println("Siilon " + i + " varaaja? "+s[i]);
+        //}
+        
         /**
         System.out.println(rk.isPaalla()+String.valueOf(siilot[0].getTayttoaste())+String.valueOf(siilot[1].getTayttoaste())+
              String.valueOf(siilot[2].getTayttoaste())+String.valueOf(siilot[3].getTayttoaste())+siilot[0].getVaraaja().toString()+siilot[1].getVaraaja().toString()+
