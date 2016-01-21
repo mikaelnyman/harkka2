@@ -1,20 +1,22 @@
-package hojclient;
+package hojserver;
+
+import hojserver.Juomamestari;
 
 
-public class Kypsytyssailio {
+public class Siilo {
+    
      /**
      * 
      */
-    private Juomamestari varaaja;
-    
-    private boolean operaatio=false;
+    private Juomamestari varaaja=null;
     
     private int tayttoaste=0;
     
     private final int MAXMAARA=10000;
     
-    public Kypsytyssailio(){
-    
+    private boolean operaatio=false;
+
+    public Siilo() {
     }
 
     public void setVaraaja(Juomamestari varaaja) {
@@ -33,6 +35,10 @@ public class Kypsytyssailio {
         return tayttoaste;
     }
 
+    public int getMAXMAARA() {
+        return MAXMAARA;
+    }
+
     public boolean isOperaatio() {
         return operaatio;
     }
@@ -40,9 +46,4 @@ public class Kypsytyssailio {
     public void setOperaatio(boolean operaatio) {
         this.operaatio = operaatio;
     }
-
-    public int getMAXMAARA() {
-        return MAXMAARA;
-    }
-    
 }

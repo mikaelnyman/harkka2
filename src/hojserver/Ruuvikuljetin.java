@@ -1,4 +1,4 @@
-package hojclient;
+package hojserver;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

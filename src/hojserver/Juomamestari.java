@@ -1,4 +1,4 @@
-package hojclient;
+package hojserver;
 
 import java.io.Serializable;
 

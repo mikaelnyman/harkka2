@@ -13,11 +13,13 @@ import java.util.logging.Logger;
  * @author Josia Nyman
  */
 public class Paivittaja extends Thread{
-    private MainWindow nimi;
+    private final MainWindow nimi;
     public Paivittaja (MainWindow nimi){
+        setDaemon(true);
         this.nimi = nimi;
     }
-public void run(){
+    @Override
+    public void run(){
     while (true){  
         nimi.paivitaKayttoliittyma();
         try {

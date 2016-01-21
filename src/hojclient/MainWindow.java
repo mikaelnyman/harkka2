@@ -5,6 +5,8 @@
  */
 package hojclient;
 
+import hojserver.LaitosRajapinta;
+import hojserver.Juomamestari;
 import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
@@ -26,7 +28,7 @@ public class MainWindow extends javax.swing.JFrame {
         initComponents();
     }
     
-    private Laitos laitos;
+    private LaitosRajapinta laitos;
     private Juomamestari jm;
     private boolean kirjautunut=false;
     
@@ -1147,13 +1149,29 @@ public class MainWindow extends javax.swing.JFrame {
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
        if(!kirjautunut){
             jm=new Juomamestari(userName.getText());
-            String RMIosoite ="viinatehdas";
+            String RMIosoite ="Laitos";
             try{
                 Registry registry = LocateRegistry.getRegistry(2016);
-                laitos = (Laitos) registry.lookup(RMIosoite);
+                laitos = (LaitosRajapinta) registry.lookup(RMIosoite);
+                System.out.println("Laitosta yritetty luoda");
                 kirjautunut=true;
-                System.out.println(laitos.annaTiedot()[0]);
-//                Paivittaja p = new Paivittaja(this);
+                if (laitos!=null){
+                    System.out.println(laitos);
+                   System.out.println(laitos.testi()[0]);
+                    String[] str=laitos.annaTiedot();
+                        for(int i=0;i<20;i++){
+                            System.out.println("Laitoksen pitäisi toimii");
+                            System.out.println(str[i]);
+                        }
+                     
+                    if(str==null){
+                        System.out.println("pöö");
+                    }
+                    
+                    Paivittaja p = new Paivittaja(this);
+                }else{
+                    System.out.println("Laitos ei toimi");
+                }
             }
             catch(Exception e){
                 System.out.println(e.getMessage());

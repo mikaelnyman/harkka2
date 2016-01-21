@@ -1,17 +1,19 @@
-package hojclient;
+package hojserver;
 
+import hojserver.Laitos;
+import hojserver.Kypsytyssailio;
+import hojserver.Juomakeitin;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.rmi.server.*;
 /**
  *
- * @author Mikael
+ * @author Mikael, Josia, Lassi
  */
 public class Palvelin {
     public static void kaynnista(){
         try{
-            System.setProperty("java.security.policy","server.policy");
+            System.setProperty("java.security.policy","Laitos.policy");
             Laitos viinatehdas=new Laitos(
                 new Ruuvikuljetin(), 
                 new Siilo[]{new Siilo(),new Siilo(),new Siilo(),new Siilo()}, 
@@ -23,6 +25,7 @@ public class Palvelin {
             );
             Registry registry = LocateRegistry.createRegistry(2016);
             Naming.rebind("//localhost:2016/Laitos", viinatehdas);
+            System.out.println("hojclient.Palvelin.kaynnista() suoritettu"); //testausta varten
         }catch (Exception e){
             System.out.println("Error: " + e);
         }

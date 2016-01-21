@@ -1,4 +1,4 @@
-package hojclient;
+package hojserver;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -8,7 +8,7 @@ public class Juomakeitin {
     /**
      * 
      */
-    private Juomamestari varaaja;
+    private Juomamestari varaaja=null;
     
     private int tayttoaste=0;
     

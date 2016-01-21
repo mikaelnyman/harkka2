@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hojclient;
+package hojserver;
 
+import hojserver.Juomamestari;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
@@ -22,4 +23,5 @@ public interface LaitosRajapinta extends Remote{
     public void taytaJuomakeitin(int a, Juomamestari jm, int maara) throws RemoteException;
     public void pullota(int a, Juomamestari jm) throws RemoteException;
     public void kypsyta(int a, Juomamestari jm) throws RemoteException;
+    public String[] testi() throws RemoteException;
 }
