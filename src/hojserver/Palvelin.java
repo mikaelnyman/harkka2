@@ -11,6 +11,9 @@ import java.rmi.registry.Registry;
  * @author Mikael, Josia, Lassi
  */
 public class Palvelin {
+    /**
+     * Käynnistää uuden palvelimen ja luo uuden Laitos-olion.
+     */
     public static void kaynnista(){
         try{
             System.setProperty("java.security.policy","Laitos.policy");
