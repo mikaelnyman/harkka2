@@ -23,7 +23,7 @@ public class Paivittaja extends Thread{
         while(true){  
             nimi.paivitaKayttoliittyma();
             try {
-                sleep(1000);
+                sleep(200);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Paivittaja.class.getName()).log(Level.SEVERE, null, ex);
             }

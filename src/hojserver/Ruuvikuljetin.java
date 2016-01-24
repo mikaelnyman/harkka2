@@ -22,22 +22,17 @@ public class Ruuvikuljetin {
 
     public void kaynnista(Siilo s,int maara) {
         try {
-            new Runnable() {
-                @Override
-                public void run() {
-                    System.out.println("Täyttö alkaa");
-                    try {
-                        for(int i=0;i<maara/KULJETUSNOPEUS*1000;i+=100){
-                            Thread.sleep(100);
-                            s.setTayttoaste((int)Math.round(s.getTayttoaste()+KULJETUSNOPEUS*0.1));
-                        }
-                        System.out.println("Täyttö päättyy ja säiliössä on "+s.getTayttoaste());
-                    } catch (InterruptedException ex) {
-                        System.out.println("Täyttö keskeytyi epäonnistuneesti");
-                        Logger.getLogger(Ruuvikuljetin.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+            System.out.println("Täyttö alkaa");
+            try {
+                for(int i=0;i<maara/KULJETUSNOPEUS*1000;i+=100){
+                    Thread.sleep(100);
+                    s.setTayttoaste((int)Math.round(s.getTayttoaste()+KULJETUSNOPEUS*0.1));
                 }
-            }.run();
+                System.out.println("Täyttö päättyy ja säiliössä on "+s.getTayttoaste());
+            } catch (InterruptedException ex) {
+                System.out.println("Täyttö keskeytyi epäonnistuneesti");
+                Logger.getLogger(Ruuvikuljetin.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } catch (Exception ex) {
             Logger.getLogger(Ruuvikuljetin.class.getName()).log(Level.SEVERE, null, ex);
         }

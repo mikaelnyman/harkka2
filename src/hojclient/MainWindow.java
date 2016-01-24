@@ -53,41 +53,56 @@ public class MainWindow extends javax.swing.JFrame {
         silo4Label = new javax.swing.JLabel();
         silo4Status = new javax.swing.JLabel();
         reserveSilo4 = new javax.swing.JToggleButton();
+        silo3User = new javax.swing.JLabel();
+        silo2User = new javax.swing.JLabel();
+        silo1User = new javax.swing.JLabel();
+        silo4User = new javax.swing.JLabel();
         loginPanel = new javax.swing.JPanel();
         userNameLabel = new javax.swing.JLabel();
         userName = new javax.swing.JTextField();
         signIn = new javax.swing.JToggleButton();
+        tekstikentta = new javax.swing.JLabel();
         tankPanel = new javax.swing.JPanel();
         tank1Label = new javax.swing.JLabel();
         tank1Status = new javax.swing.JLabel();
         reserveTank1 = new javax.swing.JToggleButton();
-        tank2Label = new javax.swing.JLabel();
-        tank2Status = new javax.swing.JLabel();
-        reserveTank2 = new javax.swing.JToggleButton();
-        tank3Label = new javax.swing.JLabel();
+        reserveTank6 = new javax.swing.JToggleButton();
         tank3Status = new javax.swing.JLabel();
-        reserveTank3 = new javax.swing.JToggleButton();
-        tank4Label = new javax.swing.JLabel();
-        tank4Status = new javax.swing.JLabel();
-        reserveTank4 = new javax.swing.JToggleButton();
+        tank10Label = new javax.swing.JLabel();
+        tank9Label = new javax.swing.JLabel();
+        reserveTank8 = new javax.swing.JToggleButton();
+        tank2Label = new javax.swing.JLabel();
+        tank7Label = new javax.swing.JLabel();
         tank5Label = new javax.swing.JLabel();
         tank5Status = new javax.swing.JLabel();
+        tank7Status = new javax.swing.JLabel();
+        tank10Status = new javax.swing.JLabel();
+        tank9Status = new javax.swing.JLabel();
+        tank8Status = new javax.swing.JLabel();
+        reserveTank9 = new javax.swing.JToggleButton();
+        tank3Label = new javax.swing.JLabel();
         reserveTank5 = new javax.swing.JToggleButton();
+        reserveTank10 = new javax.swing.JToggleButton();
+        reserveTank2 = new javax.swing.JToggleButton();
+        tank8Label = new javax.swing.JLabel();
+        reserveTank4 = new javax.swing.JToggleButton();
+        tank4Status = new javax.swing.JLabel();
+        reserveTank3 = new javax.swing.JToggleButton();
+        reserveTank7 = new javax.swing.JToggleButton();
+        tank4Label = new javax.swing.JLabel();
+        tank2Status = new javax.swing.JLabel();
+        tank1User = new javax.swing.JLabel();
+        tank2User = new javax.swing.JLabel();
+        tank7User = new javax.swing.JLabel();
+        tank8User = new javax.swing.JLabel();
+        tank3User = new javax.swing.JLabel();
+        tank4User = new javax.swing.JLabel();
+        tank9User = new javax.swing.JLabel();
+        tank5User = new javax.swing.JLabel();
+        tank10User = new javax.swing.JLabel();
         tank6Label = new javax.swing.JLabel();
         tank6Status = new javax.swing.JLabel();
-        reserveTank6 = new javax.swing.JToggleButton();
-        tank7Label = new javax.swing.JLabel();
-        tank7Status = new javax.swing.JLabel();
-        reserveTank7 = new javax.swing.JToggleButton();
-        tank8Label = new javax.swing.JLabel();
-        tank8Status = new javax.swing.JLabel();
-        reserveTank8 = new javax.swing.JToggleButton();
-        tank9Label = new javax.swing.JLabel();
-        tank9Status = new javax.swing.JLabel();
-        reserveTank9 = new javax.swing.JToggleButton();
-        tank10Label = new javax.swing.JLabel();
-        tank10Status = new javax.swing.JLabel();
-        reserveTank10 = new javax.swing.JToggleButton();
+        tank6User = new javax.swing.JLabel();
         procPanel = new javax.swing.JPanel();
         proc1Status = new javax.swing.JLabel();
         proc1Label = new javax.swing.JLabel();
@@ -116,12 +131,6 @@ public class MainWindow extends javax.swing.JFrame {
         pump2Status = new javax.swing.JLabel();
         startPump2 = new javax.swing.JToggleButton();
         bpumpPanel = new javax.swing.JPanel();
-        bpump1Label = new javax.swing.JLabel();
-        bpump1Status = new javax.swing.JLabel();
-        startBpump1 = new javax.swing.JToggleButton();
-        bpump2Label = new javax.swing.JLabel();
-        bpump2Status = new javax.swing.JLabel();
-        startBpump2 = new javax.swing.JToggleButton();
         procLoadPanel = new javax.swing.JPanel();
         procLoadLabel1 = new javax.swing.JLabel();
         startProcLoad1 = new javax.swing.JToggleButton();
@@ -131,6 +140,12 @@ public class MainWindow extends javax.swing.JFrame {
         procLoadLabel2 = new javax.swing.JLabel();
         procLoadAmount1 = new javax.swing.JTextField();
         procLoadAmount2 = new javax.swing.JTextField();
+        bpump1Label = new javax.swing.JLabel();
+        bpump1Status = new javax.swing.JLabel();
+        startBpump1 = new javax.swing.JToggleButton();
+        bpump2Label = new javax.swing.JLabel();
+        bpump2Status = new javax.swing.JLabel();
+        startBpump2 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -151,7 +166,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         silo1Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        silo1Status.setText("?");
+        silo1Status.setText("Sisältö");
         silo1Status.setMaximumSize(new java.awt.Dimension(100, 200));
         silo1Status.setMinimumSize(new java.awt.Dimension(100, 20));
         silo1Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -164,7 +179,7 @@ public class MainWindow extends javax.swing.JFrame {
         silo2Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         silo2Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        silo2Status.setText("0");
+        silo2Status.setText("?");
         silo2Status.setMaximumSize(new java.awt.Dimension(100, 200));
         silo2Status.setMinimumSize(new java.awt.Dimension(100, 20));
         silo2Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -184,7 +199,7 @@ public class MainWindow extends javax.swing.JFrame {
         silo3Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         silo3Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        silo3Status.setText("0");
+        silo3Status.setText("?");
         silo3Status.setMaximumSize(new java.awt.Dimension(100, 200));
         silo3Status.setMinimumSize(new java.awt.Dimension(100, 20));
         silo3Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -204,7 +219,7 @@ public class MainWindow extends javax.swing.JFrame {
         silo4Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         silo4Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        silo4Status.setText("0");
+        silo4Status.setText("?");
         silo4Status.setMaximumSize(new java.awt.Dimension(100, 200));
         silo4Status.setMinimumSize(new java.awt.Dimension(100, 20));
         silo4Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -216,25 +231,65 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        silo3User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        silo3User.setText("?");
+        silo3User.setMaximumSize(new java.awt.Dimension(100, 200));
+        silo3User.setMinimumSize(new java.awt.Dimension(100, 20));
+        silo3User.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        silo2User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        silo2User.setText("?");
+        silo2User.setMaximumSize(new java.awt.Dimension(100, 200));
+        silo2User.setMinimumSize(new java.awt.Dimension(100, 20));
+        silo2User.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        silo1User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        silo1User.setText("Varaaja");
+        silo1User.setMaximumSize(new java.awt.Dimension(100, 200));
+        silo1User.setMinimumSize(new java.awt.Dimension(100, 20));
+        silo1User.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        silo4User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        silo4User.setText("?");
+        silo4User.setMaximumSize(new java.awt.Dimension(100, 200));
+        silo4User.setMinimumSize(new java.awt.Dimension(100, 20));
+        silo4User.setPreferredSize(new java.awt.Dimension(100, 20));
+
         javax.swing.GroupLayout siloPanelLayout = new javax.swing.GroupLayout(siloPanel);
         siloPanel.setLayout(siloPanelLayout);
         siloPanelLayout.setHorizontalGroup(
             siloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(siloPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(siloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(silo1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(reserveSilo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(silo1Status, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(silo2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(silo2Status, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(reserveSilo2)
-                    .addComponent(silo3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(silo3Status, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(reserveSilo3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(silo4Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(silo4Status, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(reserveSilo4))
+                .addGroup(siloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(silo1Label, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.CENTER, siloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(silo1Status, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(siloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(silo2User, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(siloPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(siloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(silo4Status, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(silo3User, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(silo4Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(reserveSilo3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(siloPanelLayout.createSequentialGroup()
+                                        .addGroup(siloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(reserveSilo4)
+                                            .addComponent(reserveSilo2)
+                                            .addComponent(silo2Status, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(reserveSilo1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(silo1User, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(silo4User, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, siloPanelLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(siloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(silo3Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(silo2Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(silo3Status, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         siloPanelLayout.setVerticalGroup(
@@ -244,26 +299,34 @@ public class MainWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(silo1Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(silo1User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(reserveSilo1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(silo2Label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(silo2Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(silo2User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(reserveSilo2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(silo3Label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(silo3Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(silo3User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(reserveSilo3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(silo4Label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(silo4Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(silo4User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(reserveSilo4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         userNameLabel.setText("Username");
@@ -286,7 +349,9 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(userNameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tekstikentta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(userName, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(signIn, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -296,11 +361,16 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(loginPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(userNameLabel)
-                    .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(signIn)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addComponent(userNameLabel)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(signIn))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tekstikentta, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         tankPanel.setBackground(new java.awt.Color(204, 204, 204));
@@ -313,7 +383,7 @@ public class MainWindow extends javax.swing.JFrame {
         tank1Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         tank1Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank1Status.setText("0");
+        tank1Status.setText("Määrä");
         tank1Status.setMaximumSize(new java.awt.Dimension(100, 200));
         tank1Status.setMinimumSize(new java.awt.Dimension(100, 20));
         tank1Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -325,6 +395,40 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        reserveTank6.setText("Reserve");
+        reserveTank6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reserveTank6ActionPerformed(evt);
+            }
+        });
+
+        tank3Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank3Status.setText("?");
+        tank3Status.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank3Status.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank3Status.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank10Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank10Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/tank.jpg"))); // NOI18N
+        tank10Label.setText("Tank 10");
+        tank10Label.setFocusable(false);
+        tank10Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tank10Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        tank9Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank9Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/tank.jpg"))); // NOI18N
+        tank9Label.setText("Tank 9");
+        tank9Label.setFocusable(false);
+        tank9Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tank9Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        reserveTank8.setText("Reserve");
+        reserveTank8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reserveTank8ActionPerformed(evt);
+            }
+        });
+
         tank2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tank2Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/tank.jpg"))); // NOI18N
         tank2Label.setText("Tank 2");
@@ -332,16 +436,54 @@ public class MainWindow extends javax.swing.JFrame {
         tank2Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         tank2Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
-        tank2Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank2Status.setText("0");
-        tank2Status.setMaximumSize(new java.awt.Dimension(100, 200));
-        tank2Status.setMinimumSize(new java.awt.Dimension(100, 20));
-        tank2Status.setPreferredSize(new java.awt.Dimension(100, 20));
+        tank7Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank7Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/tank.jpg"))); // NOI18N
+        tank7Label.setText("Tank 7");
+        tank7Label.setFocusable(false);
+        tank7Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tank7Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
-        reserveTank2.setText("Reserve");
-        reserveTank2.addActionListener(new java.awt.event.ActionListener() {
+        tank5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank5Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/tank.jpg"))); // NOI18N
+        tank5Label.setText("Tank 5");
+        tank5Label.setFocusable(false);
+        tank5Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tank5Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        tank5Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank5Status.setText("?");
+        tank5Status.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank5Status.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank5Status.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank7Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank7Status.setText("?");
+        tank7Status.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank7Status.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank7Status.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank10Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank10Status.setText("?");
+        tank10Status.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank10Status.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank10Status.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank9Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank9Status.setText("?");
+        tank9Status.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank9Status.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank9Status.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank8Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank8Status.setText("?");
+        tank8Status.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank8Status.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank8Status.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        reserveTank9.setText("Reserve");
+        reserveTank9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reserveTank2ActionPerformed(evt);
+                reserveTank9ActionPerformed(evt);
             }
         });
 
@@ -352,52 +494,6 @@ public class MainWindow extends javax.swing.JFrame {
         tank3Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         tank3Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
-        tank3Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank3Status.setText("0");
-        tank3Status.setMaximumSize(new java.awt.Dimension(100, 200));
-        tank3Status.setMinimumSize(new java.awt.Dimension(100, 20));
-        tank3Status.setPreferredSize(new java.awt.Dimension(100, 20));
-
-        reserveTank3.setText("Reserve");
-        reserveTank3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reserveTank3ActionPerformed(evt);
-            }
-        });
-
-        tank4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank4Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/tank.jpg"))); // NOI18N
-        tank4Label.setText("Tank 4");
-        tank4Label.setFocusable(false);
-        tank4Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        tank4Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-
-        tank4Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank4Status.setText("0");
-        tank4Status.setMaximumSize(new java.awt.Dimension(100, 200));
-        tank4Status.setMinimumSize(new java.awt.Dimension(100, 20));
-        tank4Status.setPreferredSize(new java.awt.Dimension(100, 20));
-
-        reserveTank4.setText("Reserve");
-        reserveTank4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reserveTank4ActionPerformed(evt);
-            }
-        });
-
-        tank5Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank5Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/tank.jpg"))); // NOI18N
-        tank5Label.setText("Tank 5");
-        tank5Label.setFocusable(false);
-        tank5Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        tank5Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-
-        tank5Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank5Status.setText("0");
-        tank5Status.setMaximumSize(new java.awt.Dimension(100, 200));
-        tank5Status.setMinimumSize(new java.awt.Dimension(100, 20));
-        tank5Status.setPreferredSize(new java.awt.Dimension(100, 20));
-
         reserveTank5.setText("Reserve");
         reserveTank5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -405,43 +501,17 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        tank6Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank6Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/tank.jpg"))); // NOI18N
-        tank6Label.setText("Tank 6");
-        tank6Label.setFocusable(false);
-        tank6Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        tank6Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-
-        tank6Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank6Status.setText("0");
-        tank6Status.setMaximumSize(new java.awt.Dimension(100, 200));
-        tank6Status.setMinimumSize(new java.awt.Dimension(100, 20));
-        tank6Status.setPreferredSize(new java.awt.Dimension(100, 20));
-
-        reserveTank6.setText("Reserve");
-        reserveTank6.addActionListener(new java.awt.event.ActionListener() {
+        reserveTank10.setText("Reserve");
+        reserveTank10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reserveTank6ActionPerformed(evt);
+                reserveTank10ActionPerformed(evt);
             }
         });
 
-        tank7Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank7Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/tank.jpg"))); // NOI18N
-        tank7Label.setText("Tank 7");
-        tank7Label.setFocusable(false);
-        tank7Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        tank7Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-
-        tank7Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank7Status.setText("0");
-        tank7Status.setMaximumSize(new java.awt.Dimension(100, 200));
-        tank7Status.setMinimumSize(new java.awt.Dimension(100, 20));
-        tank7Status.setPreferredSize(new java.awt.Dimension(100, 20));
-
-        reserveTank7.setText("Reserve");
-        reserveTank7.addActionListener(new java.awt.event.ActionListener() {
+        reserveTank2.setText("Reserve");
+        reserveTank2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reserveTank7ActionPerformed(evt);
+                reserveTank2ActionPerformed(evt);
             }
         });
 
@@ -452,67 +522,125 @@ public class MainWindow extends javax.swing.JFrame {
         tank8Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         tank8Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
-        tank8Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank8Status.setText("0");
-        tank8Status.setMaximumSize(new java.awt.Dimension(100, 200));
-        tank8Status.setMinimumSize(new java.awt.Dimension(100, 20));
-        tank8Status.setPreferredSize(new java.awt.Dimension(100, 20));
-
-        reserveTank8.setText("Reserve");
-        reserveTank8.addActionListener(new java.awt.event.ActionListener() {
+        reserveTank4.setText("Reserve");
+        reserveTank4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reserveTank8ActionPerformed(evt);
+                reserveTank4ActionPerformed(evt);
             }
         });
 
-        tank9Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank9Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/tank.jpg"))); // NOI18N
-        tank9Label.setText("Tank 9");
-        tank9Label.setFocusable(false);
-        tank9Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        tank9Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        tank4Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank4Status.setText("?");
+        tank4Status.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank4Status.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank4Status.setPreferredSize(new java.awt.Dimension(100, 20));
 
-        tank9Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank9Status.setText("0");
-        tank9Status.setMaximumSize(new java.awt.Dimension(100, 200));
-        tank9Status.setMinimumSize(new java.awt.Dimension(100, 20));
-        tank9Status.setPreferredSize(new java.awt.Dimension(100, 20));
-
-        reserveTank9.setText("Reserve");
-        reserveTank9.addActionListener(new java.awt.event.ActionListener() {
+        reserveTank3.setText("Reserve");
+        reserveTank3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reserveTank9ActionPerformed(evt);
+                reserveTank3ActionPerformed(evt);
             }
         });
 
-        tank10Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank10Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/tank.jpg"))); // NOI18N
-        tank10Label.setText("Tank 10");
-        tank10Label.setFocusable(false);
-        tank10Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        tank10Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-
-        tank10Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tank10Status.setText("0");
-        tank10Status.setMaximumSize(new java.awt.Dimension(100, 200));
-        tank10Status.setMinimumSize(new java.awt.Dimension(100, 20));
-        tank10Status.setPreferredSize(new java.awt.Dimension(100, 20));
-
-        reserveTank10.setText("Reserve");
-        reserveTank10.addActionListener(new java.awt.event.ActionListener() {
+        reserveTank7.setText("Reserve");
+        reserveTank7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reserveTank10ActionPerformed(evt);
+                reserveTank7ActionPerformed(evt);
             }
         });
+
+        tank4Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank4Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/tank.jpg"))); // NOI18N
+        tank4Label.setText("Tank 4");
+        tank4Label.setFocusable(false);
+        tank4Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tank4Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        tank2Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank2Status.setText("?");
+        tank2Status.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank2Status.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank2Status.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank1User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank1User.setText("Varaaja");
+        tank1User.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank1User.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank1User.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank2User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank2User.setText("?");
+        tank2User.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank2User.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank2User.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank7User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank7User.setText("?");
+        tank7User.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank7User.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank7User.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank8User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank8User.setText("?");
+        tank8User.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank8User.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank8User.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank3User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank3User.setText("?");
+        tank3User.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank3User.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank3User.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank4User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank4User.setText("?");
+        tank4User.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank4User.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank4User.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank9User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank9User.setText("?");
+        tank9User.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank9User.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank9User.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank5User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank5User.setText("?");
+        tank5User.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank5User.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank5User.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank10User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank10User.setText("?");
+        tank10User.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank10User.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank10User.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank6Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank6Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/tank.jpg"))); // NOI18N
+        tank6Label.setText("Tank 6");
+        tank6Label.setFocusable(false);
+        tank6Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tank6Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        tank6Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank6Status.setText("?");
+        tank6Status.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank6Status.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank6Status.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        tank6User.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tank6User.setText("?");
+        tank6User.setMaximumSize(new java.awt.Dimension(100, 200));
+        tank6User.setMinimumSize(new java.awt.Dimension(100, 20));
+        tank6User.setPreferredSize(new java.awt.Dimension(100, 20));
 
         javax.swing.GroupLayout tankPanelLayout = new javax.swing.GroupLayout(tankPanel);
         tankPanel.setLayout(tankPanelLayout);
         tankPanelLayout.setHorizontalGroup(
             tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tankPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tankPanelLayout.createSequentialGroup()
                 .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(tank1Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tank1Status, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                     .addComponent(reserveTank1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tank2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tank2Status, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
@@ -528,8 +656,6 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(reserveTank5))
                 .addGap(10, 10, 10)
                 .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(tank6Label, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tank6Status, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(reserveTank6)
                     .addComponent(tank7Label, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tank7Status, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -543,32 +669,70 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(tank10Label, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tank10Status, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(reserveTank10)))
+            .addGroup(tankPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(tank1Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tank1Status, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(tank1User, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tank6Status, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(tank6Label, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                    .addComponent(tank6User, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(tankPanelLayout.createSequentialGroup()
+                .addComponent(tank2User, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
+                .addComponent(tank7User, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(tankPanelLayout.createSequentialGroup()
+                .addComponent(tank3User, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
+                .addComponent(tank8User, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(tankPanelLayout.createSequentialGroup()
+                .addComponent(tank4User, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
+                .addComponent(tank9User, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(tankPanelLayout.createSequentialGroup()
+                .addComponent(tank5User, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
+                .addComponent(tank10User, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         tankPanelLayout.setVerticalGroup(
             tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tankPanelLayout.createSequentialGroup()
                 .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tank1Label)
-                    .addComponent(tank6Label))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tank1Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tank6Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tankPanelLayout.createSequentialGroup()
+                        .addComponent(tank1Label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tank1Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tank1User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tankPanelLayout.createSequentialGroup()
+                        .addComponent(tank6Label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tank6Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tank6User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(reserveTank1)
                     .addComponent(reserveTank6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tank2Label)
                     .addComponent(tank7Label))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tank2Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tank7Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tank2User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tank7User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tankPanelLayout.createSequentialGroup()
-                        .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tank2Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tank7Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(reserveTank2)
                             .addComponent(reserveTank7))
@@ -579,6 +743,10 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tank3Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tank8Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tank3User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tank8User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(reserveTank3)
@@ -593,6 +761,10 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(tank9Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tank4User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tank9User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(reserveTank4)
                     .addComponent(reserveTank9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -603,6 +775,10 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tank10Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tank5Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tank5User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tank10User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(reserveTank10)
@@ -612,7 +788,7 @@ public class MainWindow extends javax.swing.JFrame {
         procPanel.setBackground(new java.awt.Color(204, 204, 204));
 
         proc1Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        proc1Status.setText("Running");
+        proc1Status.setText("?");
         proc1Status.setMaximumSize(new java.awt.Dimension(100, 200));
         proc1Status.setMinimumSize(new java.awt.Dimension(100, 20));
         proc1Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -660,13 +836,13 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         proc2Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        proc2Status.setText("Running");
+        proc2Status.setText("?");
         proc2Status.setMaximumSize(new java.awt.Dimension(100, 200));
         proc2Status.setMinimumSize(new java.awt.Dimension(100, 20));
         proc2Status.setPreferredSize(new java.awt.Dimension(100, 20));
 
         proc3Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        proc3Status.setText("Running");
+        proc3Status.setText("?");
         proc3Status.setMaximumSize(new java.awt.Dimension(100, 200));
         proc3Status.setMinimumSize(new java.awt.Dimension(100, 20));
         proc3Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -773,7 +949,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         siloLoadConvStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        siloLoadConvStatus.setText("Running");
+        siloLoadConvStatus.setText("?");
         siloLoadConvStatus.setMaximumSize(new java.awt.Dimension(100, 200));
         siloLoadConvStatus.setMinimumSize(new java.awt.Dimension(100, 20));
         siloLoadConvStatus.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -805,7 +981,7 @@ public class MainWindow extends javax.swing.JFrame {
         siloLoadConvStatus.getAccessibleContext().setAccessibleName("SiloLoadConvStatus");
 
         pump1Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pump1Status.setText("Running");
+        pump1Status.setText("?");
         pump1Status.setMaximumSize(new java.awt.Dimension(100, 200));
         pump1Status.setMinimumSize(new java.awt.Dimension(100, 20));
         pump1Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -832,7 +1008,7 @@ public class MainWindow extends javax.swing.JFrame {
         pump2Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         pump2Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pump2Status.setText("Running");
+        pump2Status.setText("?");
         pump2Status.setMaximumSize(new java.awt.Dimension(100, 200));
         pump2Status.setMinimumSize(new java.awt.Dimension(100, 20));
         pump2Status.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -873,72 +1049,15 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        bpump1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bpump1Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/pump.jpg"))); // NOI18N
-        bpump1Label.setText("Bottle pump 1");
-        bpump1Label.setFocusable(false);
-        bpump1Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bpump1Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-
-        bpump1Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bpump1Status.setText("Running");
-        bpump1Status.setMaximumSize(new java.awt.Dimension(100, 200));
-        bpump1Status.setMinimumSize(new java.awt.Dimension(100, 20));
-        bpump1Status.setPreferredSize(new java.awt.Dimension(100, 20));
-
-        startBpump1.setText("Start");
-        startBpump1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                startBpump1ActionPerformed(evt);
-            }
-        });
-
-        bpump2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bpump2Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/pump.jpg"))); // NOI18N
-        bpump2Label.setText("Bottle pump 2");
-        bpump2Label.setFocusable(false);
-        bpump2Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bpump2Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-
-        bpump2Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bpump2Status.setText("Running");
-        bpump2Status.setMaximumSize(new java.awt.Dimension(100, 200));
-        bpump2Status.setMinimumSize(new java.awt.Dimension(100, 20));
-        bpump2Status.setPreferredSize(new java.awt.Dimension(100, 20));
-
-        startBpump2.setText("Start");
-        startBpump2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                startBpump2ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout bpumpPanelLayout = new javax.swing.GroupLayout(bpumpPanel);
         bpumpPanel.setLayout(bpumpPanelLayout);
         bpumpPanelLayout.setHorizontalGroup(
             bpumpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bpumpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                .addComponent(bpump1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(bpump1Status, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(startBpump1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(bpump2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(bpump2Status, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(startBpump2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 29, Short.MAX_VALUE)
         );
         bpumpPanelLayout.setVerticalGroup(
             bpumpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bpumpPanelLayout.createSequentialGroup()
-                .addComponent(bpump1Label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bpump1Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(startBpump1)
-                .addGap(18, 18, 18)
-                .addComponent(bpump2Label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bpump2Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(startBpump2))
+            .addGap(0, 260, Short.MAX_VALUE)
         );
 
         procLoadLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -956,7 +1075,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         ProcLoadConvStatus1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ProcLoadConvStatus1.setText("Running");
+        ProcLoadConvStatus1.setText("?");
         ProcLoadConvStatus1.setMaximumSize(new java.awt.Dimension(100, 200));
         ProcLoadConvStatus1.setMinimumSize(new java.awt.Dimension(100, 20));
         ProcLoadConvStatus1.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -969,7 +1088,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         procLoadConvStatus2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        procLoadConvStatus2.setText("Running");
+        procLoadConvStatus2.setText("?");
         procLoadConvStatus2.setMaximumSize(new java.awt.Dimension(100, 200));
         procLoadConvStatus2.setMinimumSize(new java.awt.Dimension(100, 20));
         procLoadConvStatus2.setPreferredSize(new java.awt.Dimension(100, 20));
@@ -1033,6 +1152,46 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        bpump1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bpump1Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/pump.jpg"))); // NOI18N
+        bpump1Label.setText("Bottle pump 1");
+        bpump1Label.setFocusable(false);
+        bpump1Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bpump1Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        bpump1Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bpump1Status.setText("?");
+        bpump1Status.setMaximumSize(new java.awt.Dimension(100, 200));
+        bpump1Status.setMinimumSize(new java.awt.Dimension(100, 20));
+        bpump1Status.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        startBpump1.setText("Start");
+        startBpump1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startBpump1ActionPerformed(evt);
+            }
+        });
+
+        bpump2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bpump2Label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hojclient/icons/pump.jpg"))); // NOI18N
+        bpump2Label.setText("Bottle pump 2");
+        bpump2Label.setFocusable(false);
+        bpump2Label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bpump2Label.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        bpump2Status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bpump2Status.setText("?");
+        bpump2Status.setMaximumSize(new java.awt.Dimension(100, 200));
+        bpump2Status.setMinimumSize(new java.awt.Dimension(100, 20));
+        bpump2Status.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        startBpump2.setText("Start");
+        startBpump2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startBpump2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1056,9 +1215,17 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(pumpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(tankPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(bpump1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bpump1Status, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(startBpump1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bpump2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bpump2Status, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(startBpump2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
                 .addComponent(bpumpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1069,11 +1236,11 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(siloPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGap(217, 217, 217)
-                                .addComponent(siloLoadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(siloLoadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(siloPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(228, 228, 228)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1088,7 +1255,20 @@ public class MainWindow extends javax.swing.JFrame {
                             .addComponent(procPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(230, 230, 230)
-                        .addComponent(bpumpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(bpump1Label)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bpump1Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(startBpump1)
+                                .addGap(18, 18, 18)
+                                .addComponent(bpump2Label)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bpump2Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(startBpump2))
+                            .addComponent(bpumpPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1107,7 +1287,10 @@ public class MainWindow extends javax.swing.JFrame {
             silo2Status.setText(tila[2]);
             silo3Status.setText(tila[3]);
             silo4Status.setText(tila[4]);
-            //Todo lisää siilojen varaajat käyttöliittymään
+            silo1User.setText(tila[5]);
+            silo2User.setText(tila[6]);
+            silo3User.setText(tila[7]);
+            silo4User.setText(tila[8]);
             ProcLoadConvStatus1.setText(Boolean.parseBoolean(tila[9])?"Running":"Standby");
             procLoadConvStatus2.setText(Boolean.parseBoolean(tila[10])?"Running":"Standby");
             proc1User.setText(tila[11]);
@@ -1130,6 +1313,17 @@ public class MainWindow extends javax.swing.JFrame {
             tank10Status.setText(tila[28]);
             bpump1Status.setText(Boolean.parseBoolean(tila[29])?"Running":"Standby");
             bpump2Status.setText(Boolean.parseBoolean(tila[30])?"Running":"Standby");
+            tank1User.setText(tila[31]);
+            tank2User.setText(tila[32]);
+            tank3User.setText(tila[33]);
+            tank4User.setText(tila[34]);
+            tank5User.setText(tila[35]);
+            tank6User.setText(tila[36]);
+            tank7User.setText(tila[37]);
+            tank8User.setText(tila[38]);
+            tank9User.setText(tila[39]);
+            tank10User.setText(tila[40]);
+            
         } 
         catch (RemoteException ex) {
             System.out.println("Virhe käyttöliittymän päivityksessä");
@@ -1139,10 +1333,20 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void startSiloLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startSiloLoadActionPerformed
-        try {
-            laitos.taytaSiilot(jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            new Thread(){
+                @Override
+                public void run(){
+                    try {
+                        laitos.taytaSiilot(jm);
+                    } catch (RemoteException ex) {
+                        Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }.start();
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_startSiloLoadActionPerformed
 
@@ -1153,12 +1357,13 @@ public class MainWindow extends javax.swing.JFrame {
      */
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
         if(!kirjautunut){
+            tekstikentta.setText("");
             jm=new Juomamestari(userName.getText());
             String RMIosoite ="Laitos";
             try{
                 Registry registry = LocateRegistry.getRegistry(2016);
                 laitos = (LaitosRajapinta) registry.lookup(RMIosoite);
-                System.out.println("Laitosta yritetty luoda");
+                //System.out.println("Laitosta yritetty luoda");
                 kirjautunut=true;
                 if (laitos!=null){
                     paivittaja = new Paivittaja(this);
@@ -1171,218 +1376,360 @@ public class MainWindow extends javax.swing.JFrame {
                 System.out.println(e.getMessage());
             }
         }
+        else{
+            tekstikentta.setText("Olet jo kirjautunut");
+        }
     }//GEN-LAST:event_signInActionPerformed
 
     private void startProcLoad1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad1ActionPerformed
-        try {
-            laitos.taytaJuomakeitin(0,jm,Integer.parseInt(procLoadAmount1.getText()));
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        new Thread(){
+            @Override
+            public void run(){
+                try {
+                    laitos.taytaJuomakeitin(0,jm,Integer.parseInt(procLoadAmount1.getText()));
+                } catch (RemoteException ex) {
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }.start();
     }//GEN-LAST:event_startProcLoad1ActionPerformed
 
     private void startProcLoad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad2ActionPerformed
-        try {
-            laitos.taytaJuomakeitin(1,jm,Integer.parseInt(procLoadAmount1.getText()));
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        new Thread(){
+            @Override
+            public void run(){
+                try {
+                    laitos.taytaJuomakeitin(1,jm,Integer.parseInt(procLoadAmount1.getText()));
+                } catch (RemoteException ex) {
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }.start();
     }//GEN-LAST:event_startProcLoad2ActionPerformed
 
     private void reserveSilo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo1ActionPerformed
-        try {
-            if(laitos==null){
-                System.out.println("Laitos on null");
+        if(kirjautunut){
+            try {
+                if(laitos==null){
+                    System.out.println("Laitos on null");
+                }
+                else{
+                    laitos.varaaSiilo(0, jm);
+                }
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
             }
-            else{
-                laitos.varaaSiilo(0, jm);
-            }
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_reserveSilo1ActionPerformed
 
     private void reserveSilo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo2ActionPerformed
-        try {
-            laitos.varaaSiilo(1, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaSiilo(1, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
+        }        
     }//GEN-LAST:event_reserveSilo2ActionPerformed
 
     private void reserveSilo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo3ActionPerformed
-        try {
-            laitos.varaaSiilo(2, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaSiilo(2, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
+        }        
     }//GEN-LAST:event_reserveSilo3ActionPerformed
 
     private void reserveSilo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo4ActionPerformed
-        try {
-            laitos.varaaSiilo(3, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaSiilo(3, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
+        }        
     }//GEN-LAST:event_reserveSilo4ActionPerformed
 
     private void reserveProc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc1ActionPerformed
-        try {
-            laitos.varaaJuomakeitin(0, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaJuomakeitin(0, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_reserveProc1ActionPerformed
 
     private void startProc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc1ActionPerformed
-        try {
-            laitos.kypsyta(0, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.kypsyta(0, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
+        }        
     }//GEN-LAST:event_startProc1ActionPerformed
 
     private void reserveProc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc2ActionPerformed
-        try {
-            laitos.varaaJuomakeitin(1, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaJuomakeitin(1, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_reserveProc2ActionPerformed
 
     private void startProc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc2ActionPerformed
-        try {
-            laitos.kypsyta(1, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.kypsyta(1, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
+        }        
     }//GEN-LAST:event_startProc2ActionPerformed
 
     private void reserveProc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc3ActionPerformed
-        try {
-            laitos.varaaJuomakeitin(2, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        if(kirjautunut){
+            try {
+                laitos.varaaJuomakeitin(2, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
+        }
     }//GEN-LAST:event_reserveProc3ActionPerformed
 
     private void startProc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc3ActionPerformed
-        try {
-            laitos.kypsyta(2, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.kypsyta(2, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
+        }        
     }//GEN-LAST:event_startProc3ActionPerformed
 
     private void startPump1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPump1ActionPerformed
-        try {
-            laitos.pumppaa(0,jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            new Thread(){
+                @Override
+                public void run(){
+                    try {
+                        laitos.pumppaa(0,jm);
+                    } catch (RemoteException ex) {
+                        Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }   
+            }.start();
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_startPump1ActionPerformed
 
     private void startPump2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPump2ActionPerformed
-        try {
-            laitos.pumppaa(1,jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            new Thread(){
+                @Override
+                public void run(){
+                    try {
+                        laitos.pumppaa(1,jm);
+                    } catch (RemoteException ex) {
+                        Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }.start();
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_startPump2ActionPerformed
 
     private void startBpump1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBpump1ActionPerformed
-        try {
-            laitos.pullota(0,jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.pullota(0,jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_startBpump1ActionPerformed
 
     private void startBpump2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBpump2ActionPerformed
-        try {
-            laitos.pullota(1,jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.pullota(1,jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_startBpump2ActionPerformed
 
     private void reserveTank1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank1ActionPerformed
-        try {
-            laitos.varaaKypsytyssailio(0, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaKypsytyssailio(0, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_reserveTank1ActionPerformed
 
     private void reserveTank2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank2ActionPerformed
-        try {
-            laitos.varaaKypsytyssailio(1, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaKypsytyssailio(1, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_reserveTank2ActionPerformed
 
     private void reserveTank3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank3ActionPerformed
-        try {
-            laitos.varaaKypsytyssailio(2, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaKypsytyssailio(2, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_reserveTank3ActionPerformed
 
     private void reserveTank4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank4ActionPerformed
-        try {
-            laitos.varaaKypsytyssailio(3, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaKypsytyssailio(3, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_reserveTank4ActionPerformed
 
     private void reserveTank5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank5ActionPerformed
-        try {
-            laitos.varaaKypsytyssailio(4, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaKypsytyssailio(4, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_reserveTank5ActionPerformed
 
     private void reserveTank6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank6ActionPerformed
-        try {
-            laitos.varaaKypsytyssailio(5, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaKypsytyssailio(5, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_reserveTank6ActionPerformed
 
     private void reserveTank7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank7ActionPerformed
-        try {
-            laitos.varaaKypsytyssailio(6, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaKypsytyssailio(6, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_reserveTank7ActionPerformed
 
     private void reserveTank8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank8ActionPerformed
-        try {
-            laitos.varaaKypsytyssailio(7, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut)
+            try {
+                laitos.varaaKypsytyssailio(7, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_reserveTank8ActionPerformed
 
     private void reserveTank9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank9ActionPerformed
-        try {
-            laitos.varaaKypsytyssailio(8, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaKypsytyssailio(8, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_reserveTank9ActionPerformed
 
     private void reserveTank10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank10ActionPerformed
-        try {
-            laitos.varaaKypsytyssailio(9, jm);
-        } catch (RemoteException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(kirjautunut){
+            try {
+                laitos.varaaKypsytyssailio(9, jm);
+            } catch (RemoteException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            tekstikentta.setText("Kirjaudu sisään!");
         }
     }//GEN-LAST:event_reserveTank10ActionPerformed
 
@@ -1396,6 +1743,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     /**
      * 
+     * @param args Not used
      */
     public static void main(String[] args) {
         /* Set the Nimbus look and feel */
@@ -1485,12 +1833,16 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JToggleButton signIn;
     private javax.swing.JLabel silo1Label;
     private javax.swing.JLabel silo1Status;
+    private javax.swing.JLabel silo1User;
     private javax.swing.JLabel silo2Label;
     private javax.swing.JLabel silo2Status;
+    private javax.swing.JLabel silo2User;
     private javax.swing.JLabel silo3Label;
     private javax.swing.JLabel silo3Status;
+    private javax.swing.JLabel silo3User;
     private javax.swing.JLabel silo4Label;
     private javax.swing.JLabel silo4Status;
+    private javax.swing.JLabel silo4User;
     private javax.swing.JLabel siloLoadConvStatus;
     private javax.swing.JLabel siloLoadLabel;
     private javax.swing.JPanel siloLoadPanel;
@@ -1507,25 +1859,36 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JToggleButton startSiloLoad;
     private javax.swing.JLabel tank10Label;
     private javax.swing.JLabel tank10Status;
+    private javax.swing.JLabel tank10User;
     private javax.swing.JLabel tank1Label;
     private javax.swing.JLabel tank1Status;
+    private javax.swing.JLabel tank1User;
     private javax.swing.JLabel tank2Label;
     private javax.swing.JLabel tank2Status;
+    private javax.swing.JLabel tank2User;
     private javax.swing.JLabel tank3Label;
     private javax.swing.JLabel tank3Status;
+    private javax.swing.JLabel tank3User;
     private javax.swing.JLabel tank4Label;
     private javax.swing.JLabel tank4Status;
+    private javax.swing.JLabel tank4User;
     private javax.swing.JLabel tank5Label;
     private javax.swing.JLabel tank5Status;
+    private javax.swing.JLabel tank5User;
     private javax.swing.JLabel tank6Label;
     private javax.swing.JLabel tank6Status;
+    private javax.swing.JLabel tank6User;
     private javax.swing.JLabel tank7Label;
     private javax.swing.JLabel tank7Status;
+    private javax.swing.JLabel tank7User;
     private javax.swing.JLabel tank8Label;
     private javax.swing.JLabel tank8Status;
+    private javax.swing.JLabel tank8User;
     private javax.swing.JLabel tank9Label;
     private javax.swing.JLabel tank9Status;
+    private javax.swing.JLabel tank9User;
     private javax.swing.JPanel tankPanel;
+    private javax.swing.JLabel tekstikentta;
     private javax.swing.JTextField userName;
     private javax.swing.JLabel userNameLabel;
     // End of variables declaration//GEN-END:variables

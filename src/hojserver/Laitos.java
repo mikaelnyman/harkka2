@@ -100,30 +100,46 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
             String.valueOf(sailiot[8].getTayttoaste()),
             String.valueOf(sailiot[9].getTayttoaste()),
             String.valueOf(pullotuspumput[0].isPaalla()),
-            String.valueOf(pullotuspumput[1].isPaalla())};
-         return str;
+            String.valueOf(pullotuspumput[1].isPaalla()),
+            sailiot[0].getVaraaja()!=null?sailiot[0].getVaraaja().toString():null,
+            sailiot[1].getVaraaja()!=null?sailiot[1].getVaraaja().toString():null,
+            sailiot[2].getVaraaja()!=null?sailiot[2].getVaraaja().toString():null,
+            sailiot[3].getVaraaja()!=null?sailiot[3].getVaraaja().toString():null,
+            sailiot[4].getVaraaja()!=null?sailiot[4].getVaraaja().toString():null,
+            sailiot[5].getVaraaja()!=null?sailiot[5].getVaraaja().toString():null,
+            sailiot[6].getVaraaja()!=null?sailiot[6].getVaraaja().toString():null,
+            sailiot[7].getVaraaja()!=null?sailiot[7].getVaraaja().toString():null,
+            sailiot[8].getVaraaja()!=null?sailiot[8].getVaraaja().toString():null,
+            sailiot[9].getVaraaja()!=null?sailiot[9].getVaraaja().toString():null
+        };
+        return str;
     }
     
     @Override
     public void taytaSiilot(Juomamestari jm) throws RemoteException
     {
-        for(Siilo s:siilot){
-            if(s.getVaraaja()==null){
-                s.setVaraaja(jm);
+        new Thread(){
+            @Override
+            public void run(){
+                for(Siilo s:siilot){
+                    if(s.getVaraaja()==null){
+                        s.setVaraaja(jm);
+                    }
+                }
+                for(Siilo s:siilot){
+                    if(s.getVaraaja().equals(jm) && !s.isOperaatio()){
+                        s.setOperaatio(true);
+                        int x=s.getMAXMAARA()-s.getTayttoaste();
+                        rk.setPaalla(true);
+                        rk.kaynnista(s,x);
+                        rk.setPaalla(false);
+                        s.setTayttoaste(s.getMAXMAARA());
+                        s.setVaraaja(null);
+                        s.setOperaatio(false);
+                    }
+                }
             }
-        }
-        for(Siilo s:siilot){
-            if(s.getVaraaja().equals(jm) && !s.isOperaatio()){
-                s.setOperaatio(true);
-                int x=s.getMAXMAARA()-s.getTayttoaste();
-                rk.setPaalla(true);
-                rk.kaynnista(s,x);
-                rk.setPaalla(false);
-                s.setTayttoaste(s.getMAXMAARA());
-                s.setVaraaja(null);
-                s.setOperaatio(false);
-            }
-        }
+        }.start();
     }
     
     @Override
@@ -152,26 +168,30 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
     @Override
     public void taytaJuomakeitin(int a, Juomamestari jm, int maara) throws RemoteException
     {
-        if(!raakaAineKuljettimet[a].isPaalla()){
-            raakaAineKuljettimet[a].setPaalla(true);
-            for(Siilo s:siilot){
-                if (!s.isOperaatio() && s.getVaraaja() != null && s.getVaraaja().equals(jm)){
-                    s.setOperaatio(true);
-                    for(Juomakeitin k:keittimet){
-                        if(k.getVaraaja() != null && k.getVaraaja().equals(jm) && k.getTayttoaste()==0){
-                            int x = Math.min(Math.min(maara, s.getTayttoaste()), k.getMAXMAARA());
-                            raakaAineKuljettimet[a].kaynnista(s,x);
-                            s.setTayttoaste(s.getTayttoaste()-x);
-                            k.setTayttoaste(x);
-                            if (s.getTayttoaste()==0){
-                                s.setVaraaja(null);
+        new Thread(){
+            public void run(){
+                if(!raakaAineKuljettimet[a].isPaalla()){
+                    raakaAineKuljettimet[a].setPaalla(true);
+                    for(Siilo s:siilot){
+                        if (!s.isOperaatio() && s.getVaraaja() != null && s.getVaraaja().equals(jm)){
+                            s.setOperaatio(true);
+                            for(Juomakeitin k:keittimet){
+                                if(k.getVaraaja() != null && k.getVaraaja().equals(jm) && k.getTayttoaste()==0){
+                                    int x = Math.min(Math.min(maara, s.getTayttoaste()), k.getMAXMAARA());
+                                    raakaAineKuljettimet[a].kaynnista(s,x);
+                                    s.setTayttoaste(s.getTayttoaste()-x);
+                                    k.setTayttoaste(x);
+                                    if (s.getTayttoaste()==0){
+                                        s.setVaraaja(null);
+                                    }
+                                }
                             }
                         }
                     }
-                }
+                    raakaAineKuljettimet[a].setPaalla(false);
+                }    
             }
-            raakaAineKuljettimet[a].setPaalla(false);
-        }    
+        }.start();
     }
     @Override
     public void pullota(int a,Juomamestari jm) throws RemoteException
