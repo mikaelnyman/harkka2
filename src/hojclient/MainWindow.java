@@ -1428,7 +1428,7 @@ public class MainWindow extends javax.swing.JFrame {
             @Override
             public void run(){
                 try {
-                    laitos.taytaJuomakeitin(1,jm,Integer.parseInt(procLoadAmount1.getText()));
+                    laitos.taytaJuomakeitin(1,jm,Integer.parseInt(procLoadAmount2.getText()));
                 } catch (RemoteException ex) {
                     Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
                 }

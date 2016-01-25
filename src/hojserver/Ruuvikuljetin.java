@@ -48,6 +48,8 @@ public class Ruuvikuljetin {
                 s.setTayttoaste(sm);
                 k.setTayttoaste(km);
             }
+            Thread.sleep(500);
+            k.setTayttoaste(km*10000/2000);  //Lisätään vesi
         }
         catch(InterruptedException ie){
             System.out.println(ie.getMessage());

@@ -46,7 +46,7 @@ public class Pumppu {
             int jkm=jk.getTayttoaste();
             int ksm=0;
             for(int i=0;i<maara/KULJETUSNOPEUS*1000;i+=100){
-                Thread.sleep(maara/KULJETUSNOPEUS*1000);
+                Thread.sleep(100);
                 jkm-=KULJETUSNOPEUS*0.1;
                 ksm+=KULJETUSNOPEUS*0.1;
                 jk.setTayttoaste(jkm);
@@ -60,7 +60,8 @@ public class Pumppu {
     void pullota(Kypsytyssailio k) {
         try{
             int km=k.getTayttoaste();
-            for(int i=0;i<km/KULJETUSNOPEUS*1000;i+=100){
+            int stop=km/KULJETUSNOPEUS*1000;
+            for(int i=0;i<stop;i+=100){
                 Thread.sleep(100);
                 km-=KULJETUSNOPEUS/10;
                 k.setTayttoaste(km);

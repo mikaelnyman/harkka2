@@ -122,16 +122,19 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
         new Thread(){
             @Override
             public void run(){
-                for(Siilo s:siilot){
-                    if(s.getVaraaja()==null && !s.isOperaatio()){
-                        s.setOperaatio(true);
-                        int x=s.getMAXMAARA()-s.getTayttoaste();
-                        rk.setPaalla(true);
-                        rk.kaynnista(s,x);
-                        rk.setPaalla(false);
-                        s.setVaraaja(null);
-                        s.setOperaatio(false);
+                if(!rk.isPaalla()){
+                    rk.setPaalla(true);
+                    for(Siilo s:siilot){
+                        if(s.getVaraaja()==null){
+                            int x=s.getMAXMAARA()-s.getTayttoaste();  
+                            if(x>0){
+                                s.setOperaatio(true);
+                                rk.kaynnista(s,x);
+                                s.setOperaatio(false);
+                            }
+                        }
                     }
+                    rk.setPaalla(false);
                 }
             }
         }.start();
@@ -164,6 +167,7 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
     public void taytaJuomakeitin(int a, Juomamestari jm, int maara) throws RemoteException
     {
         new Thread(){
+            int m=maara;
             public void run(){
                 if(!raakaAineKuljettimet[a].isPaalla()){
                     raakaAineKuljettimet[a].setPaalla(true);
@@ -172,10 +176,14 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
                             s.setOperaatio(true);
                             for(Juomakeitin k:keittimet){
                                 if(k.getVaraaja() != null && k.getVaraaja().equals(jm) && k.getTayttoaste()==0){
-                                    int x = Math.min(Math.min(maara, s.getTayttoaste()), k.getMAXMAARA());
+                                    int x = Math.min(Math.min(m, s.getTayttoaste()), k.getMAXMAARA());
                                     raakaAineKuljettimet[a].kaynnistaSiilosta(s,k,x);
                                     if (s.getTayttoaste()==0){
                                         s.setVaraaja(null);
+                                    }
+                                    m-=x;
+                                    if(m==0){
+                                        return;
                                     }
                                 }
                             }
@@ -196,7 +204,7 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
                 if(!pullotuspumput[a].isPaalla()){
                     pullotuspumput[a].setPaalla(true);
                     for(Kypsytyssailio k:sailiot){
-                        if(k!=null && k.getVaraaja().equals(jm) && !k.isOperaatio()){
+                        if(k.getVaraaja()!=null && k.getVaraaja().equals(jm) && !k.isOperaatio()){
                             k.setOperaatio(true);
                             pullotuspumput[a].pullota(k);
                             k.setVaraaja(null);

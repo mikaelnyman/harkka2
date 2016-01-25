@@ -1,8 +1,5 @@
 package hojserver;
 
-import hojserver.Juomamestari;
-
-
 public class Siilo {
     
      /**
@@ -47,7 +44,7 @@ public class Siilo {
     }
 
     /**
-     * palauttaa tiedon siitä, kuinka täynnä siilon on.
+     * palauttaa tiedon siitä, kuinka täynnä siilo on.
      * @return Siilon täyttöaste
      */
     public int getTayttoaste() {
