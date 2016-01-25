@@ -28,7 +28,7 @@ public class UnitTest {
                     new Pumppu[]{new Pumppu(), new Pumppu()}
             );
             System.out.println("Laitos luotu onnistuneesti");
-            tehdas.testi();
+            
         } catch (RemoteException ex) {
             System.err.println("tapahtui virhe");
             Logger.getLogger(UnitTest.class.getName()).log(Level.SEVERE, null, ex);

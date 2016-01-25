@@ -41,11 +41,33 @@ public class Pumppu {
      * Pumppaustapahtumaa simuloidaan odottamalla pumppaukseen kuluva aika.
      * @param maara 
      */
-    public void pumppaa(int maara){
+    public void pumppaa(int maara, Juomakeitin jk, Kypsytyssailio ks){
         try {
-            Thread.sleep(maara/KULJETUSNOPEUS*1000);
+            int jkm=jk.getTayttoaste();
+            int ksm=0;
+            for(int i=0;i<maara/KULJETUSNOPEUS*1000;i+=100){
+                Thread.sleep(maara/KULJETUSNOPEUS*1000);
+                jkm-=KULJETUSNOPEUS*0.1;
+                ksm+=KULJETUSNOPEUS*0.1;
+                jk.setTayttoaste(jkm);
+                ks.setTayttoaste(ksm);
+            }
         } catch (InterruptedException ex) {
             Logger.getLogger(Pumppu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    void pullota(Kypsytyssailio k) {
+        try{
+            int km=k.getTayttoaste();
+            for(int i=0;i<km/KULJETUSNOPEUS*1000;i+=100){
+                Thread.sleep(100);
+                km-=KULJETUSNOPEUS/10;
+                k.setTayttoaste(km);
+            }
+        }
+        catch(InterruptedException ie){
+            System.out.println(ie.getMessage());
         }
     }
 }

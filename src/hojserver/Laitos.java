@@ -8,8 +8,6 @@ package hojserver;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Esittää koko laitosta ja sisältää kaikki osat
@@ -84,9 +82,9 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
             keittimet[0].getVaraaja()!=null?keittimet[0].getVaraaja().toString():null,
             keittimet[1].getVaraaja()!=null?keittimet[1].getVaraaja().toString():null,
             keittimet[2].getVaraaja()!=null?keittimet[2].getVaraaja().toString():null,
-            String.valueOf(keittimet[0].isPaalla()),
-            String.valueOf(keittimet[1].isPaalla()),
-            String.valueOf(keittimet[2].isPaalla()),
+            String.valueOf(keittimet[0].getTila()),
+            String.valueOf(keittimet[1].getTila()),
+            String.valueOf(keittimet[2].getTila()),
             String.valueOf(pumput[0].isPaalla()),
             String.valueOf(pumput[1].isPaalla()),
             String.valueOf(sailiot[0].getTayttoaste()),
@@ -110,7 +108,10 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
             sailiot[6].getVaraaja()!=null?sailiot[6].getVaraaja().toString():null,
             sailiot[7].getVaraaja()!=null?sailiot[7].getVaraaja().toString():null,
             sailiot[8].getVaraaja()!=null?sailiot[8].getVaraaja().toString():null,
-            sailiot[9].getVaraaja()!=null?sailiot[9].getVaraaja().toString():null
+            sailiot[9].getVaraaja()!=null?sailiot[9].getVaraaja().toString():null,
+            String.valueOf(keittimet[0].getTayttoaste()),
+            String.valueOf(keittimet[1].getTayttoaste()),
+            String.valueOf(keittimet[2].getTayttoaste())
         };
         return str;
     }
@@ -122,18 +123,12 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
             @Override
             public void run(){
                 for(Siilo s:siilot){
-                    if(s.getVaraaja()==null){
-                        s.setVaraaja(jm);
-                    }
-                }
-                for(Siilo s:siilot){
-                    if(s.getVaraaja().equals(jm) && !s.isOperaatio()){
+                    if(s.getVaraaja()==null && !s.isOperaatio()){
                         s.setOperaatio(true);
                         int x=s.getMAXMAARA()-s.getTayttoaste();
                         rk.setPaalla(true);
                         rk.kaynnista(s,x);
                         rk.setPaalla(false);
-                        s.setTayttoaste(s.getMAXMAARA());
                         s.setVaraaja(null);
                         s.setOperaatio(false);
                     }
@@ -178,14 +173,14 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
                             for(Juomakeitin k:keittimet){
                                 if(k.getVaraaja() != null && k.getVaraaja().equals(jm) && k.getTayttoaste()==0){
                                     int x = Math.min(Math.min(maara, s.getTayttoaste()), k.getMAXMAARA());
-                                    raakaAineKuljettimet[a].kaynnista(s,x);
-                                    s.setTayttoaste(s.getTayttoaste()-x);
-                                    k.setTayttoaste(x);
+                                    raakaAineKuljettimet[a].kaynnistaSiilosta(s,k,x);
                                     if (s.getTayttoaste()==0){
                                         s.setVaraaja(null);
                                     }
                                 }
                             }
+                            s.setVaraaja(null);
+                            s.setOperaatio(false);
                         }
                     }
                     raakaAineKuljettimet[a].setPaalla(false);
@@ -194,63 +189,62 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
         }.start();
     }
     @Override
-    public void pullota(int a,Juomamestari jm) throws RemoteException
-    {
-        if(!pullotuspumput[a].isPaalla()){
-            pullotuspumput[a].setPaalla(true);
-            for(Kypsytyssailio k:sailiot){
-                if(k!=null && k.getVaraaja().equals(jm) && !k.isOperaatio()){
-                    k.setOperaatio(true);
-                    pullotuspumput[a].pumppaa(k.getTayttoaste());
-                    k.setTayttoaste(0);
-                    k.setVaraaja(null);
-                    k.setOperaatio(false);
+    public void pullota(int a,Juomamestari jm) throws RemoteException{
+        new Thread(){
+            @Override
+            public void run(){
+                if(!pullotuspumput[a].isPaalla()){
+                    pullotuspumput[a].setPaalla(true);
+                    for(Kypsytyssailio k:sailiot){
+                        if(k!=null && k.getVaraaja().equals(jm) && !k.isOperaatio()){
+                            k.setOperaatio(true);
+                            pullotuspumput[a].pullota(k);
+                            k.setVaraaja(null);
+                            k.setOperaatio(false);
+                        }
+                    }
+                    pullotuspumput[a].setPaalla(false);
                 }
             }
-            pullotuspumput[a].setPaalla(false);
-        }
+        }.start();
     }
     
     @Override
     public void kypsyta(int a, Juomamestari jm) throws RemoteException{
-        if(keittimet[a].getVaraaja()!=null && keittimet[a].getVaraaja().equals(jm) && !keittimet[a].isKeitetty()){
-            keittimet[a].keita();
-        }
+        new Thread(){
+            @Override
+            public void run(){
+                if(keittimet[a].getVaraaja()!=null && keittimet[a].getVaraaja().equals(jm) && keittimet[a].getTila()==0){
+                    keittimet[a].keita();
+                }
+            }
+        }.start();
     }
     
     @Override
     public void pumppaa(int a, Juomamestari jm) throws RemoteException{
-        if(!pumput[a].isPaalla()){
-            pumput[a].setPaalla(true);
-            for(Juomakeitin jk:keittimet){
-                if(jk.getVaraaja()!=null && jk.getVaraaja().equals(jm) && jk.isKeitetty()){
-                    for(Kypsytyssailio ks:sailiot){
-                        if(ks.getVaraaja()!=null && ks.getVaraaja().equals(jm) && ks.getTayttoaste()==0){
-                            int b=Math.min(jk.getTayttoaste(), ks.getMAXMAARA());
-                            pumput[a].pumppaa(b);
-                            jk.setTayttoaste(jk.getTayttoaste()-b);
-                            if(jk.getTayttoaste()==0){
-                                jk.setVaraaja(null);
+        new Thread(){
+            @Override
+            public void run(){
+                if(!pumput[a].isPaalla()){
+                    pumput[a].setPaalla(true);
+                    for(Juomakeitin jk:keittimet){
+                        if(jk.getVaraaja()!=null && jk.getVaraaja().equals(jm) && jk.getTila()==2){
+                            for(Kypsytyssailio ks:sailiot){
+                                if(ks.getVaraaja()!=null && ks.getVaraaja().equals(jm) && ks.getTayttoaste()==0){
+                                    int b=Math.min(jk.getTayttoaste(), ks.getMAXMAARA());
+                                    pumput[a].pumppaa(b, jk, ks);
+                                    if(jk.getTayttoaste()==0){
+                                        jk.setVaraaja(null);
+                                        jk.setTila(0);
+                                    }
+                                }
                             }
                         }
                     }
+                    pumput[a].setPaalla(false);
                 }
             }
-            pumput[a].setPaalla(false);
-        }
-    }
-    /**
-     * Kun toimii, voi poistaa
-     * @return 
-     */
-    @Override
-    public void testi(){
-        try {
-            //rk.kaynnista(siilot[0], 1000);
-            taytaSiilot(new Juomamestari("asdasd"));
-        } catch (RemoteException ex) {
-            System.err.println("asdasdasd");
-            Logger.getLogger(Laitos.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }.start();
     }
 }

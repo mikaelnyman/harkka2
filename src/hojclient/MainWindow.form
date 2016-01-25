@@ -115,7 +115,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="358" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -139,35 +139,29 @@
                           <Component id="silo1Status" alignment="2" min="-2" pref="73" max="-2" attributes="0"/>
                           <Group type="103" alignment="2" groupAlignment="0" attributes="0">
                               <Component id="silo2User" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="silo4Status" alignment="1" pref="0" max="32767" attributes="0"/>
+                              <Component id="silo3User" alignment="1" pref="0" max="32767" attributes="0"/>
+                              <Component id="silo4Label" alignment="1" max="32767" attributes="0"/>
+                              <Component id="reserveSilo3" alignment="1" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="silo4Status" alignment="1" pref="0" max="32767" attributes="0"/>
-                                      <Component id="silo3User" alignment="1" pref="0" max="32767" attributes="0"/>
-                                      <Component id="silo4Label" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="reserveSilo3" alignment="1" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="reserveSilo4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="reserveSilo2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="silo2Status" alignment="0" min="-2" pref="73" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="reserveSilo1" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="silo1User" alignment="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="silo4User" alignment="0" pref="0" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="silo3Label" alignment="1" min="-2" pref="73" max="-2" attributes="0"/>
-                                              <Component id="silo2Label" alignment="1" min="-2" pref="73" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="silo3Status" alignment="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="reserveSilo4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="reserveSilo2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="silo2Status" alignment="0" min="-2" pref="73" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="reserveSilo1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="silo1User" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="silo4User" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="silo3Label" alignment="1" min="-2" pref="73" max="-2" attributes="0"/>
+                                      <Component id="silo2Label" alignment="1" min="-2" pref="73" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="silo3Status" alignment="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1186,34 +1180,37 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="proc1Status" alignment="2" min="-2" pref="73" max="-2" attributes="0"/>
-                  <Component id="proc1Label" alignment="2" max="32767" attributes="0"/>
-                  <Component id="startProc1" alignment="2" max="32767" attributes="0"/>
-                  <Component id="proc2Label" alignment="2" max="32767" attributes="0"/>
-                  <Component id="reserveProc1" alignment="2" max="32767" attributes="0"/>
-                  <Component id="reserveProc2" alignment="2" max="32767" attributes="0"/>
-                  <Component id="startProc2" alignment="2" max="32767" attributes="0"/>
-                  <Component id="proc2Status" alignment="2" min="-2" pref="73" max="-2" attributes="0"/>
-                  <Component id="proc3Status" alignment="2" min="-2" pref="73" max="-2" attributes="0"/>
-                  <Component id="startProc3" alignment="2" max="32767" attributes="0"/>
-                  <Component id="reserveProc3" alignment="2" max="32767" attributes="0"/>
-                  <Component id="proc3Label" alignment="2" max="32767" attributes="0"/>
-                  <Component id="proc3User" alignment="2" max="32767" attributes="0"/>
-                  <Component id="proc2User" alignment="2" max="32767" attributes="0"/>
-                  <Component id="proc1User" alignment="2" max="32767" attributes="0"/>
-              </Group>
+              <Component id="proc1Label" alignment="2" max="32767" attributes="0"/>
+              <Component id="proc1User" alignment="2" max="32767" attributes="0"/>
+              <Component id="proc1Status" alignment="1" pref="120" max="32767" attributes="0"/>
+              <Component id="proc1Maara" alignment="0" max="32767" attributes="0"/>
+              <Component id="startProc1" alignment="2" max="32767" attributes="0"/>
+              <Component id="proc2Label" alignment="2" max="32767" attributes="0"/>
+              <Component id="reserveProc1" alignment="2" max="32767" attributes="0"/>
+              <Component id="reserveProc2" alignment="2" max="32767" attributes="0"/>
+              <Component id="startProc2" alignment="2" max="32767" attributes="0"/>
+              <Component id="proc2Status" alignment="2" min="-2" pref="73" max="-2" attributes="0"/>
+              <Component id="proc3Status" alignment="2" min="-2" pref="73" max="-2" attributes="0"/>
+              <Component id="startProc3" alignment="2" max="32767" attributes="0"/>
+              <Component id="reserveProc3" alignment="2" max="32767" attributes="0"/>
+              <Component id="proc3Label" alignment="2" max="32767" attributes="0"/>
+              <Component id="proc3User" alignment="2" max="32767" attributes="0"/>
+              <Component id="proc2User" alignment="2" max="32767" attributes="0"/>
+              <Component id="proc2Maara" alignment="2" min="-2" pref="73" max="-2" attributes="0"/>
+              <Component id="proc3Maara" alignment="2" min="-2" pref="73" max="-2" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="proc1Label" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Component id="proc1User" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="proc1Status" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="proc1Maara" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="reserveProc1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -1225,6 +1222,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="proc2Status" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="proc2Maara" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="reserveProc2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="startProc2" min="-2" max="-2" attributes="0"/>
@@ -1234,7 +1233,9 @@
                   <Component id="proc3User" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="proc3Status" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="proc3Maara" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   <Component id="reserveProc3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="startProc3" min="-2" max="-2" attributes="0"/>
@@ -1247,7 +1248,7 @@
         <Component class="javax.swing.JLabel" name="proc1Status">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="?"/>
+            <Property name="text" type="java.lang.String" value="Tyhj&#xe4;/k&#xe4;ynniss&#xe4;/valmis"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[100, 200]"/>
             </Property>
@@ -1271,6 +1272,27 @@
             <Property name="verticalTextPosition" type="int" value="1"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JLabel" name="proc1User">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="User"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="proc1Maara">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="m&#xe4;&#xe4;r&#xe4;"/>
+            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[100, 200]"/>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[100, 20]"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[100, 20]"/>
+            </Property>
+          </Properties>
+        </Component>
         <Component class="javax.swing.JToggleButton" name="startProc1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Start"/>
@@ -1289,6 +1311,21 @@
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="proc3Maara">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="?"/>
+            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[100, 200]"/>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[100, 20]"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[100, 20]"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JToggleButton" name="reserveProc1">
@@ -1385,10 +1422,19 @@
             <Property name="text" type="java.lang.String" value="User"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="proc1User">
+        <Component class="javax.swing.JLabel" name="proc2Maara">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="User"/>
+            <Property name="text" type="java.lang.String" value="?"/>
+            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[100, 200]"/>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[100, 20]"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[100, 20]"/>
+            </Property>
           </Properties>
         </Component>
       </SubComponents>

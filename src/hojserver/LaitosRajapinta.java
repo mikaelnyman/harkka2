@@ -23,5 +23,4 @@ public interface LaitosRajapinta extends Remote{
     public void taytaJuomakeitin(int a, Juomamestari jm, int maara) throws RemoteException;
     public void pullota(int a, Juomamestari jm) throws RemoteException;
     public void kypsyta(int a, Juomamestari jm) throws RemoteException;
-    public void testi() throws RemoteException;
 }
