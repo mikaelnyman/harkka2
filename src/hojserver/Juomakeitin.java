@@ -23,13 +23,24 @@ public class Juomakeitin {
      */
     private final int AIKA=20;
 
+    /**
+     * Luo uuden Juomakeitin-olion.
+     */
     public Juomakeitin() {
     }
 
+    /**
+     * Palauttaa Juomamestari-olion, joka on juomakeittimen varaaja.
+     * @return 
+     */
     public Juomamestari getVaraaja() {
         return varaaja;
     }
 
+    /**
+     * Palauttaa juomakeittimen täyttöasteen.
+     * @return juomakeittimen täyttöaste
+     */
     public int getTayttoaste() {
         return tayttoaste;
     }
@@ -44,10 +55,18 @@ public class Juomakeitin {
     }
 */    
 
+    /**
+     * Asettaa parametrina saadun Juomamestari-olion juomakeittimen varaajaksi.
+     * @param varaaja 
+     */
     public void setVaraaja(Juomamestari varaaja) {
         this.varaaja = varaaja;
     }
 
+    /**
+     * Asettaa juomakeittimen täyttöasteeksi parametrina saadun lukuarvon.
+     * @param tayttoaste 
+     */
     public void setTayttoaste(int tayttoaste) {
         this.tayttoaste = tayttoaste;
     }
@@ -78,6 +97,10 @@ public class Juomakeitin {
         }
     }
 
+    /**
+     * Palauttaa juomakeittimen maksimitilavuuden.
+     * @return juomakeittimen maksimitilavuus
+     */
     public int getMAXMAARA() {
         return MAXMAARA;
     } 

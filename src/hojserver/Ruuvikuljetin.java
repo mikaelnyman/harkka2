@@ -13,13 +13,27 @@ public class Ruuvikuljetin {
      */
     private final int KULJETUSNOPEUS=200;
 
+    /**
+     * Luo uuden Ruuvikuljetin-olion.
+     */
     public Ruuvikuljetin() {
     }
 
+    /**
+     * Palauttaa tiedon siitä, onko ruuvikuljetin päällä.
+     * True = päällä, false = pois päältä
+     * @return Boolean tyyppinen arvo siitä, onko ruuvikuljetin päällä.
+     */
     public boolean isPaalla() {
         return paalla;
     }
 
+    /**
+     * Täyttää parametrina s saatuun siiloon parametrina maara saadun määrän raaka-ainetta.
+     * Täyttöä simuloidaan odottamalla siihen kuluva aika ja päivittämällä siilon täyttöastetta.
+     * @param s
+     * @param maara 
+     */
     public void kaynnista(Siilo s,int maara) {
         try {
             for(int i=0;i<maara/KULJETUSNOPEUS*1000;i+=100){
@@ -33,10 +47,25 @@ public class Ruuvikuljetin {
         }
     }
 
+    /**
+     * Asettaa parametriin paalla tiedon siitä, onko ruuvikuljetin päällä.
+     * Tieto asetetaan parametrina saadun boolean tyyppisen arvon perusteella.
+     * True = päällä, false = pois päältä
+     * @param paalla 
+     */
     public void setPaalla(boolean paalla) {
         this.paalla = paalla;
     }
 
+    /**
+     * Kuljettaa raaka-ainetta parametrina s saadusta siilosta parametrina k saatuun
+     * juomakeittimeen. Kuljetettavan raaka-aineen määrä saadaan parametrina x.
+     * Kuljetustapahtumaa simuloidaan odottamalla kuljetukseen kuluva aika ja päivittämällä
+     * siilon ja juomakeittimen täyttöasteita.
+     * @param s
+     * @param k
+     * @param x 
+     */
     void kaynnistaSiilosta(Siilo s, Juomakeitin k, int x) {
         try{
             int sm=s.getTayttoaste();

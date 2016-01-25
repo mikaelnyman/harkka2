@@ -54,14 +54,29 @@ public class Kypsytyssailio {
         return tayttoaste;
     }
 
+    /**
+     * Palauttaa tiedon siitä, onko kypsytyssäiliö käytössä.
+     * True = on käytössä, false = ei ole käytössä.
+     * @return Boolean tyyppinen tieto siitä, onko kypsytyssäiliö käytössä.
+     */
     public boolean isOperaatio() {
         return operaatio;
     }
 
+    /**
+     * Asettaa parametrina saadun tiedon mukaan parametriin operaatio tiedon siitä,
+     * onko kypsytyssäiliö käytössä.
+     * True = on käytössä, false = ei ole käytössä
+     * @param operaatio 
+     */
     public void setOperaatio(boolean operaatio) {
         this.operaatio = operaatio;
     }
 
+    /**
+     * Palauttaa kypsytyssäiliön maksimitilavuuden.
+     * @return Kypsytyssäiliön maksimitilavuus
+     */
     public int getMAXMAARA() {
         return MAXMAARA;
     }

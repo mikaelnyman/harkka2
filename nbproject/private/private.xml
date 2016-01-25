@@ -3,16 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Mikael/Documents/NetBeansProjects/harkka2/src/hojclient/Testi.java</file>
-            <file>file:/C:/Users/Mikael/Documents/NetBeansProjects/harkka2/src/hojserver/LaitosRajapinta.java</file>
-            <file>file:/C:/Users/Mikael/Documents/NetBeansProjects/harkka2/src/hojclient/MainWindow.java</file>
-            <file>file:/C:/Users/Mikael/Documents/NetBeansProjects/harkka2/src/hojserver/Palvelin.java</file>
-            <file>file:/C:/Users/Mikael/Documents/NetBeansProjects/harkka2/src/hojserver/Siilo.java</file>
-            <file>file:/C:/Users/Mikael/Documents/NetBeansProjects/harkka2/src/hojserver/Ruuvikuljetin.java</file>
-            <file>file:/C:/Users/Mikael/Documents/NetBeansProjects/harkka2/src/hojclient/Paivittaja.java</file>
-            <file>file:/C:/Users/Mikael/Documents/NetBeansProjects/harkka2/src/hojserver/Juomakeitin.java</file>
-            <file>file:/C:/Users/Mikael/Documents/NetBeansProjects/harkka2/src/hojserver/Laitos.java</file>
-            <file>file:/C:/Users/Mikael/Documents/NetBeansProjects/harkka2/src/hojserver/UnitTest.java</file>
+            <file>file:/E:/Hajautettu%20Netbeans/harkka2/src/hojclient/Paivittaja.java</file>
+            <file>file:/E:/Hajautettu%20Netbeans/harkka2/src/hojserver/Laitos.java</file>
+            <file>file:/E:/Hajautettu%20Netbeans/harkka2/src/hojserver/LaitosRajapinta.java</file>
+            <file>file:/E:/Hajautettu%20Netbeans/harkka2/src/hojclient/MainWindow.java</file>
+            <file>file:/E:/Hajautettu%20Netbeans/harkka2/src/hojserver/Juomakeitin.java</file>
+            <file>file:/E:/Hajautettu%20Netbeans/harkka2/src/hojserver/Kypsytyssailio.java</file>
+            <file>file:/E:/Hajautettu%20Netbeans/harkka2/src/hojclient/Testi.java</file>
+            <file>file:/E:/Hajautettu%20Netbeans/harkka2/src/hojserver/Palvelin.java</file>
+            <file>file:/E:/Hajautettu%20Netbeans/harkka2/src/hojserver/Juomamestari.java</file>
+            <file>file:/E:/Hajautettu%20Netbeans/harkka2/src/hojserver/Siilo.java</file>
+            <file>file:/E:/Hajautettu%20Netbeans/harkka2/src/hojserver/Pumppu.java</file>
+            <file>file:/E:/Hajautettu%20Netbeans/harkka2/src/hojserver/Ruuvikuljetin.java</file>
         </group>
     </open-files>
 </project-private>

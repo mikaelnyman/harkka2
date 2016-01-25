@@ -57,6 +57,12 @@ public class Pumppu {
         }
     }
 
+    /**
+     * Pumppaa kypsytyssäiliön sisällön pullotukseen. Parametrina annetaan
+     * kypsytyssäiliö, jonka sisältö pumpataan. Pumppaustapahtumaa simuloidaan odottamalla
+     * siihen kuluva aika ja päivittämällä kypsytyssäiliössä olevan nesteen määrää.
+     * @param k 
+     */
     void pullota(Kypsytyssailio k) {
         try{
             int km=k.getTayttoaste();

@@ -13,6 +13,7 @@ import java.rmi.registry.Registry;
 public class Palvelin {
     /**
      * Käynnistää uuden palvelimen ja luo uuden Laitos-olion.
+     * Luo myös laitoksen tarvitsemat muut luokat.
      */
     public static void kaynnista(){
         try{
