@@ -239,9 +239,11 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
                     for(Juomakeitin jk:keittimet){
                         if(jk.getVaraaja()!=null && jk.getVaraaja().equals(jm) && jk.getTila()==2){
                             for(Kypsytyssailio ks:sailiot){
-                                if(ks.getVaraaja()!=null && ks.getVaraaja().equals(jm) && ks.getTayttoaste()==0){
+                                if(ks.getVaraaja()!=null && ks.getVaraaja().equals(jm) && ks.getTayttoaste()==0 && !ks.isOperaatio()){
                                     int b=Math.min(jk.getTayttoaste(), ks.getMAXMAARA());
+                                    ks.setOperaatio(true);
                                     pumput[a].pumppaa(b, jk, ks);
+                                    ks.setOperaatio(false);
                                     if(jk.getTayttoaste()==0){
                                         jk.setVaraaja(null);
                                         jk.setTila(0);
