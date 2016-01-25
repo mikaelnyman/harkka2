@@ -12,17 +12,11 @@ public class Juomakeitin {
     
     private int tayttoaste=0;
     
-//    private boolean paalla=false;    
-//    private boolean keitetty=false;
-    
-    /**
-     * 0=ei keitetty
-     * 1=keittää
-     * 2=keitetty
-     */
     private int tila=0;
     
     private final int MAXMAARA=2000;
+    
+    private boolean operaatio=false;
 
     /**
      * Yksikkö sekunti
@@ -87,4 +81,12 @@ public class Juomakeitin {
     public int getMAXMAARA() {
         return MAXMAARA;
     } 
+
+    public boolean isOperaatio() {
+        return operaatio;
+    }
+
+    public void setOperaatio(boolean operaatio) {
+        this.operaatio = operaatio;
+    }
 }

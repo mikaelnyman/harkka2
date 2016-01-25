@@ -177,7 +177,9 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
                             for(Juomakeitin k:keittimet){
                                 if(k.getVaraaja() != null && k.getVaraaja().equals(jm) && k.getTayttoaste()==0){
                                     int x = Math.min(Math.min(m, s.getTayttoaste()), k.getMAXMAARA());
+                                    k.setOperaatio(true);
                                     raakaAineKuljettimet[a].kaynnistaSiilosta(s,k,x);
+                                    k.setOperaatio(false);
                                     if (s.getTayttoaste()==0){
                                         s.setVaraaja(null);
                                     }
@@ -222,8 +224,10 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
         new Thread(){
             @Override
             public void run(){
-                if(keittimet[a].getVaraaja()!=null && keittimet[a].getVaraaja().equals(jm) && keittimet[a].getTila()==0){
+                if(keittimet[a].getVaraaja()!=null && keittimet[a].getVaraaja().equals(jm) && keittimet[a].getTila()==0 && !keittimet[a].isOperaatio()){
+                    keittimet[a].setOperaatio(true);
                     keittimet[a].keita();
+                    keittimet[a].setOperaatio(false);
                 }
             }
         }.start();
