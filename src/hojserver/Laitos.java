@@ -168,6 +168,7 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
     {
         new Thread(){
             int m=maara;
+            @Override
             public void run(){
                 if(!raakaAineKuljettimet[a].isPaalla()){
                     raakaAineKuljettimet[a].setPaalla(true);
@@ -175,7 +176,7 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
                         if (!s.isOperaatio() && s.getVaraaja() != null && s.getVaraaja().equals(jm)){
                             s.setOperaatio(true);
                             for(Juomakeitin k:keittimet){
-                                if(k.getVaraaja() != null && k.getVaraaja().equals(jm) && k.getTayttoaste()==0){
+                                if(k.getVaraaja() != null && !k.isOperaatio() && k.getVaraaja().equals(jm) && k.getTayttoaste()==0){
                                     int x = Math.min(Math.min(m, s.getTayttoaste()), k.getMAXMAARA());
                                     k.setOperaatio(true);
                                     raakaAineKuljettimet[a].kaynnistaSiilosta(s,k,x);
@@ -185,6 +186,9 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
                                     }
                                     m-=x;
                                     if(m==0){
+                                        raakaAineKuljettimet[a].setPaalla(false);
+                                        s.setVaraaja(null);
+                                        s.setOperaatio(false);
                                         return;
                                     }
                                 }
@@ -241,16 +245,19 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
                 if(!pumput[a].isPaalla()){
                     pumput[a].setPaalla(true);
                     for(Juomakeitin jk:keittimet){
-                        if(jk.getVaraaja()!=null && jk.getVaraaja().equals(jm) && jk.getTila()==2){
+                        if(jk.getVaraaja()!=null && jk.getVaraaja().equals(jm) && jk.getTila()==2 && !jk.isOperaatio()){
                             for(Kypsytyssailio ks:sailiot){
                                 if(ks.getVaraaja()!=null && ks.getVaraaja().equals(jm) && ks.getTayttoaste()==0 && !ks.isOperaatio()){
                                     int b=Math.min(jk.getTayttoaste(), ks.getMAXMAARA());
                                     ks.setOperaatio(true);
+                                    jk.setOperaatio(true);
                                     pumput[a].pumppaa(b, jk, ks);
+                                    jk.setOperaatio(false);
                                     ks.setOperaatio(false);
                                     if(jk.getTayttoaste()==0){
                                         jk.setVaraaja(null);
                                         jk.setTila(0);
+                                        jk.setOperaatio(false);
                                     }
                                 }
                             }

@@ -1322,8 +1322,8 @@ public class MainWindow extends javax.swing.JFrame {
             proc2User.setText(tila[12]);
             proc3User.setText(tila[13]);
             proc1Status.setText(tila[14].equals("0")?"kylmä":tila[14].equals("1")?"kiehuu":"valmis");
-            proc2Status.setText(tila[15].equals("0")?"kylmä":tila[14].equals("1")?"kiehuu":"valmis");
-            proc3Status.setText(tila[16].equals("0")?"kylmä":tila[14].equals("1")?"kiehuu":"valmis");
+            proc2Status.setText(tila[15].equals("0")?"kylmä":tila[15].equals("1")?"kiehuu":"valmis");
+            proc3Status.setText(tila[16].equals("0")?"kylmä":tila[16].equals("1")?"kiehuu":"valmis");
             pump1Status.setText(Boolean.parseBoolean(tila[17])?"Running":"Standby");
             pump2Status.setText(Boolean.parseBoolean(tila[18])?"Running":"Standby");
             tank1Status.setText(tila[19]);
@@ -1386,7 +1386,13 @@ public class MainWindow extends javax.swing.JFrame {
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
         if(!kirjautunut){
             tekstikentta.setText("");
-            jm=new Juomamestari(userName.getText());
+            String nimi=userName.getText();
+            if(nimi.length()>0){
+                jm=new Juomamestari(nimi);
+            } else{
+                tekstikentta.setText("Kirjoita nimesi ensin");
+                return;
+            }
             String RMIosoite ="Laitos";
             try{
                 Registry registry = LocateRegistry.getRegistry(2016);
@@ -1415,7 +1421,17 @@ public class MainWindow extends javax.swing.JFrame {
             @Override
             public void run(){
                 try {
-                    laitos.taytaJuomakeitin(0,jm,Integer.parseInt(procLoadAmount1.getText()));
+                    int maara;
+                    try{
+                        maara=Integer.parseInt( procLoadAmount1.getText() );
+                    }catch (NumberFormatException e){
+                        procLoadAmount1.setText("");
+                        return;
+                    }
+                    if(maara>0){
+                        laitos.taytaJuomakeitin(0,jm,maara);
+                    }
+                    procLoadAmount1.setText("");
                 } catch (RemoteException ex) {
                     Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -1428,7 +1444,17 @@ public class MainWindow extends javax.swing.JFrame {
             @Override
             public void run(){
                 try {
-                    laitos.taytaJuomakeitin(1,jm,Integer.parseInt(procLoadAmount2.getText()));
+                    int maara;
+                    try{
+                        maara=Integer.parseInt( procLoadAmount2.getText() );
+                    }catch (NumberFormatException e){
+                        procLoadAmount2.setText("");
+                        return;
+                    }
+                    if(maara>0){
+                        laitos.taytaJuomakeitin(1,jm,maara);
+                    }
+                    procLoadAmount2.setText("");
                 } catch (RemoteException ex) {
                     Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
                 }
