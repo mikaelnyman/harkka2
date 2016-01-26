@@ -1,7 +1,5 @@
 package hojserver;
 
-import hojserver.Juomamestari;
-
 
 public class Kypsytyssailio {
      /**
