@@ -6,6 +6,7 @@
 package hojserver;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,7 +19,7 @@ public class UnitTest {
     
  
     public static void main(String[] args) {
-        try {
+        /**try {
             Laitos tehdas = new Laitos(new Ruuvikuljetin(),
                     new Siilo[]{new Siilo(),new Siilo(),new Siilo(),new Siilo()},
                     new Ruuvikuljetin[]{new Ruuvikuljetin(),new Ruuvikuljetin()},
@@ -33,6 +34,10 @@ public class UnitTest {
             System.err.println("tapahtui virhe");
             Logger.getLogger(UnitTest.class.getName()).log(Level.SEVERE, null, ex);
         }
+        */
+        ArrayList<String> nimi =new ArrayList<String>();
+        nimi.add("rgdfg");
+        System.out.println(nimi.get(0));
     }
     
 }

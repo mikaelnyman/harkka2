@@ -5,7 +5,6 @@
  */
 package hojserver;
 
-import hojserver.Juomamestari;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
@@ -14,6 +13,7 @@ import java.rmi.RemoteException;
  * @author Mikael
  */
 public interface LaitosRajapinta extends Remote{
+    public boolean kirjaudu(Juomamestari jm) throws RemoteException;
     public String[] annaTiedot() throws RemoteException;
     public void taytaSiilot(Juomamestari jm) throws RemoteException;
     public void varaaSiilo(int a, Juomamestari jm) throws RemoteException;

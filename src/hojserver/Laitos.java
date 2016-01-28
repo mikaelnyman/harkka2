@@ -8,12 +8,18 @@ package hojserver;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 /**
  * Esittää koko laitosta ja sisältää kaikki osat
  * @author Mikael
  */
 public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
+    /**
+     * Lista, joka sisältää kirjautuneet Juomamestarit
+     */
+    private ArrayList<Juomamestari> nimitaulukko=new ArrayList<>();
+    
     /**
      * Siilon täyttö
      */
@@ -43,6 +49,30 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
      * 10 kpl tankkeja
      */
     private final Kypsytyssailio[] sailiot;
+    
+    /**
+     * 
+     * @param jm
+     * @return onko Juomamestari laillinen
+     */
+    public boolean kirjaudu(Juomamestari jm)
+    {
+        if (nimitaulukko == null)
+        {
+            nimitaulukko.add(jm);
+            return true;
+        }else
+        {
+            for(int i=0;i<nimitaulukko.size();i++){
+                if(jm.equals(nimitaulukko.get(i))){
+                    return false;
+                }
+            }
+            nimitaulukko.add(jm);
+            return true;
+        }
+        
+    }
     
     /**
      * 2kpl pumppuja kypsystyssäiliöistä pullotukseen

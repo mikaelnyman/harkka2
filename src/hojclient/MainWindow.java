@@ -1389,26 +1389,33 @@ public class MainWindow extends javax.swing.JFrame {
             String nimi=userName.getText();
             if(nimi.length()>0){
                 jm=new Juomamestari(nimi);
+                String RMIosoite ="Laitos";
+                try{
+                    if (laitos==null){
+                        Registry registry = LocateRegistry.getRegistry(2016);
+                        laitos = (LaitosRajapinta) registry.lookup(RMIosoite);
+                    }
+                    if (laitos!=null){
+                        System.out.println("Laitos luotu");
+                        if(kirjautunut=laitos.kirjaudu(jm)){
+                            paivittaja = new Paivittaja(this);
+                            paivittaja.start();
+                        }else{
+                            tekstikentta.setText("Nimi jo käytössä");
+                            return;
+                        }
+                    }else{
+                        System.out.println("Laitos ei toimi");
+                    }
+                }
+                catch(Exception e){
+                    System.out.println(e.getMessage());
+                }
             } else{
                 tekstikentta.setText("Kirjoita nimesi ensin");
                 return;
             }
-            String RMIosoite ="Laitos";
-            try{
-                Registry registry = LocateRegistry.getRegistry(2016);
-                laitos = (LaitosRajapinta) registry.lookup(RMIosoite);
-                //System.out.println("Laitosta yritetty luoda");
-                kirjautunut=true;
-                if (laitos!=null){
-                    paivittaja = new Paivittaja(this);
-                    paivittaja.start();
-                }else{
-                    System.out.println("Laitos ei toimi");
-                }
-            }
-            catch(Exception e){
-                System.out.println(e.getMessage());
-            }
+            
         }
         else{
             tekstikentta.setText("Olet jo kirjautunut");
