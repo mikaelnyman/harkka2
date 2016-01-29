@@ -79,14 +79,28 @@ public class Juomakeitin {
         this.keitetty = keitetty;
     }*/
 
+    /**
+    * Palauttaa Juomakeitin-olion tilan.
+    * 0 = kylmä, 1 = kiehuu, 2 = valmis
+    * @return Juomakeitin-olion tila
+    */
     public int getTila() {
         return tila;
     }
 
+    /**
+     * Asettaa Juomakeitin-olion tilaksi parametrina saadun lukuarvon.
+     * 0 = kylmä, 1 = kiehuu, 2 = valmis
+     * @param tila 
+     */
     public void setTila(int tila) {
         this.tila = tila;
     }
     
+    /**
+     * Keittää Juomakeitin-olion sisällön. Keittämistä simuloidaan odottamalla
+     * siihen kuluva aika ja päivittämällä Juomakeitin-olion tilaa.
+     */
     public void keita(){
         try {
             tila=1;
@@ -105,10 +119,21 @@ public class Juomakeitin {
         return MAXMAARA;
     } 
 
+    /**
+     * Palauttaa tiedon siitä, onko Juomakeitin-oliossa meneillään
+     * jokin operaatio.
+     * True = operaatio on meneillään, false = operaatiota ei ole käynnissä
+     * @return Tieto siitä, onko Juomakeitin-oliossa meneillään jokin operaatio
+     */
     public boolean isOperaatio() {
         return operaatio;
     }
 
+    /**
+     * Asettaa Juomakeitin-olion operaatio -parametrin arvoksi metodin
+     * parametrina saadun arvon.
+     * @param operaatio 
+     */
     public void setOperaatio(boolean operaatio) {
         this.operaatio = operaatio;
     }

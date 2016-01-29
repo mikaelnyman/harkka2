@@ -79,6 +79,17 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
      */
     private final Pumppu[] pullotuspumput;
     
+    /**
+     * Luo uuden Laitos-olion ja sen tarvitsemat muut luokat
+     * @param r1
+     * @param s
+     * @param r2
+     * @param j
+     * @param p1
+     * @param k
+     * @param p2
+     * @throws RemoteException 
+     */
     public Laitos(Ruuvikuljetin r1, Siilo[] s, Ruuvikuljetin[] r2, Juomakeitin[] j, Pumppu[] p1, Kypsytyssailio[] k, Pumppu[] p2) throws RemoteException{
         super();
         rk=r1;
@@ -89,11 +100,11 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
         sailiot=k;
         pullotuspumput=p2;
     }
+    
     /**
-     * Tänne tulee koko logiikka.
-     * Kaikki metodit pitää esitellä myös LaitosRajapinnassa.
-     * @return laitoksen tila
-     * @throws java.rmi.RemoteException
+     * Palauttaa laitoksen tilan String[] taulukkona
+     * @return String[] taulukko laitoksen tilasta
+     * @throws RemoteException 
      */
     @Override
     public String[] annaTiedot() throws RemoteException{
@@ -146,6 +157,11 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
         return str;
     }
     
+    /**
+     * Täyttää kaikki siilot, jotka eivät ole käytössä
+     * @param jm
+     * @throws RemoteException 
+     */
     @Override
     public void taytaSiilot(Juomamestari jm) throws RemoteException
     {
@@ -170,6 +186,13 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
         }.start();
     }
     
+    /**
+     * Varaa siilon. Parametrina a annetaan varatavan siilon numero ja
+     * parametrina jm annetaan Juomamestari-olio, jolle siilo varataan.
+     * @param a
+     * @param jm
+     * @throws RemoteException 
+     */
     @Override
     public void varaaSiilo(int a, Juomamestari jm) throws RemoteException
     {
@@ -178,6 +201,13 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
         }
     }
 
+    /**
+     * Varaa kypsytyssäiliön. Parametrina a annetaan varattavan kypsytyssäiliön
+     * numero ja parametrina jm varaava Juomamestari-olio.
+     * @param a
+     * @param jm
+     * @throws RemoteException 
+     */
     @Override
     public void varaaKypsytyssailio(int a, Juomamestari jm) throws RemoteException
     {
@@ -186,6 +216,13 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
         }
     }
 
+    /**
+     * Varaa juomakeittimen. Parametrina a annetaan varattavan juomakeittimen
+     * numero ja parametrina jm varaava Juomamestari-olio.
+     * @param a
+     * @param jm
+     * @throws RemoteException 
+     */
     @Override
     public void varaaJuomakeitin(int a, Juomamestari jm) throws RemoteException
     {
@@ -193,6 +230,16 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
             keittimet[a].setVaraaja(jm);
         }
     }
+    
+    /**
+     * Täyttää juomakeittimen. Parametrina a annetaan juomakeittimen numero,
+     * parametrina jm annetaan käskyn lähettänyt Juomamestari-olio ja parametrina
+     * maara annetaan täytettävä määrä.
+     * @param a
+     * @param jm
+     * @param maara
+     * @throws RemoteException 
+     */
     @Override
     public void taytaJuomakeitin(int a, Juomamestari jm, int maara) throws RemoteException
     {
@@ -232,6 +279,15 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
             }
         }.start();
     }
+    
+    /**
+     * Siirtää kypsytyssäiliön sisällön pullotukseen. Parametrina a annetaan
+     * kypsytyssäiliön numero ja parametrina jm annetaan käskyn lähettänyt
+     * Juomamestari-olio.
+     * @param a
+     * @param jm
+     * @throws RemoteException 
+     */
     @Override
     public void pullota(int a,Juomamestari jm) throws RemoteException{
         new Thread(){
@@ -253,6 +309,13 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
         }.start();
     }
     
+    /**
+     * Kypsyttää juomakeittimen sisällön. Parametrina a annetaan juomakeittimen
+     * numero ja parametrina jm annetaan käskyn lähettänyt Juomamestari-olio
+     * @param a
+     * @param jm
+     * @throws RemoteException 
+     */
     @Override
     public void kypsyta(int a, Juomamestari jm) throws RemoteException{
         new Thread(){
@@ -267,6 +330,14 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
         }.start();
     }
     
+    /**
+     * Pumppaa juomakeittimessä keitetyn juoman kypsytyssäiliöön. Parametrina
+     * a annetaan juomakeittimen numero ja parametrina jm annetaan käskyn
+     * lähettänyt Juomamestari-olio.
+     * @param a
+     * @param jm
+     * @throws RemoteException 
+     */
     @Override
     public void pumppaa(int a, Juomamestari jm) throws RemoteException{
         new Thread(){

@@ -18,6 +18,9 @@ public class Paivittaja extends Thread{
         setDaemon(true);
         this.nimi = nimi;
     }
+    /**
+     * Huolehtii käyttöliittymän näkymän säännöllisestä päivittämisestä.
+     */
     @Override
     public void run(){
         while(true){  

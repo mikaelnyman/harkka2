@@ -1300,6 +1300,9 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Päivittää käyttöliittymän
+     */
     public void paivitaKayttoliittyma(){
         String[] tila;
         try {
@@ -1592,6 +1595,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Lähettää käskyn siilojen täytöstä
+     * @param evt 
+     */
     private void startSiloLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startSiloLoadActionPerformed
         if(kirjautunut){
             new Thread(){
@@ -1654,6 +1661,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_signInActionPerformed
 
+    /**
+     * Lähettää käskyn ruuvikuljettimen nro 1 käynnistämisestä
+     * @param evt 
+     */
     private void startProcLoad1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad1ActionPerformed
         //TODO: tarkista, että annettu luku on sopiva, ei esim ""
         new Thread(){
@@ -1678,6 +1689,10 @@ public class MainWindow extends javax.swing.JFrame {
         }.start();
     }//GEN-LAST:event_startProcLoad1ActionPerformed
 
+    /**
+     * Lähettää käskyn ruuvikuljettimen nro 2 käynnistämisestä
+     * @param evt 
+     */
     private void startProcLoad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProcLoad2ActionPerformed
         new Thread(){
             @Override
@@ -1701,6 +1716,10 @@ public class MainWindow extends javax.swing.JFrame {
         }.start();
     }//GEN-LAST:event_startProcLoad2ActionPerformed
 
+    /**
+     * Lähettää käskyn siilon nro 1 varaamisesta
+     * @param evt 
+     */
     private void reserveSilo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo1ActionPerformed
         if(kirjautunut){
             try {
@@ -1719,6 +1738,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reserveSilo1ActionPerformed
 
+    /**
+     * Lähettää käskyn siilon nro 2 varaamisesta
+     * @param evt 
+     */
     private void reserveSilo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo2ActionPerformed
         if(kirjautunut){
             try {
@@ -1732,6 +1755,10 @@ public class MainWindow extends javax.swing.JFrame {
         }        
     }//GEN-LAST:event_reserveSilo2ActionPerformed
 
+    /**
+     * Lähettää käskyn siilon nro 3 varaamisesta
+     * @param evt 
+     */
     private void reserveSilo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo3ActionPerformed
         if(kirjautunut){
             try {
@@ -1745,6 +1772,10 @@ public class MainWindow extends javax.swing.JFrame {
         }        
     }//GEN-LAST:event_reserveSilo3ActionPerformed
 
+    /**
+     * Lähettää käskyn siilon nro 4 varaamisesta
+     * @param evt 
+     */
     private void reserveSilo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveSilo4ActionPerformed
         if(kirjautunut){
             try {
@@ -1758,6 +1789,10 @@ public class MainWindow extends javax.swing.JFrame {
         }        
     }//GEN-LAST:event_reserveSilo4ActionPerformed
 
+    /**
+     * Lähettää käskyn juomakeittimen nro 1 varaamisesta
+     * @param evt 
+     */
     private void reserveProc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc1ActionPerformed
         if(kirjautunut){
             try {
@@ -1771,6 +1806,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reserveProc1ActionPerformed
 
+    /**
+     * Lähettää käskyn juomakeittimen no 1 käynnistämisestä
+     * @param evt 
+     */
     private void startProc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc1ActionPerformed
         if(kirjautunut){
             new Thread(){
@@ -1789,6 +1828,10 @@ public class MainWindow extends javax.swing.JFrame {
         }        
     }//GEN-LAST:event_startProc1ActionPerformed
 
+    /**
+     * Lähettää käskyn juomakeittimen nro 2 varaamisesta
+     * @param evt 
+     */
     private void reserveProc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc2ActionPerformed
         if(kirjautunut){
             try {
@@ -1802,6 +1845,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reserveProc2ActionPerformed
 
+    /**
+     * Lähettää käskyn juomakeittimen nro 2 käynnistämisestä
+     * @param evt 
+     */
     private void startProc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc2ActionPerformed
         if(kirjautunut){
             new Thread(){
@@ -1820,6 +1867,10 @@ public class MainWindow extends javax.swing.JFrame {
         }        
     }//GEN-LAST:event_startProc2ActionPerformed
 
+    /**
+     * Lähettää käskyn juomakeittimen nro 3 varaamisesta
+     * @param evt 
+     */
     private void reserveProc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveProc3ActionPerformed
         if(kirjautunut){
             try {
@@ -1833,6 +1884,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reserveProc3ActionPerformed
 
+    /**
+     * Lähettää käskyn juomakeittimen nro 3 käynnistämisestä
+     * @param evt 
+     */
     private void startProc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startProc3ActionPerformed
         if(kirjautunut){
             new Thread(){
@@ -1851,6 +1906,10 @@ public class MainWindow extends javax.swing.JFrame {
         }        
     }//GEN-LAST:event_startProc3ActionPerformed
 
+    /**
+     * Lähettää käskyn pumpun nro 1 käynnistämisestä
+     * @param evt 
+     */
     private void startPump1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPump1ActionPerformed
         if(kirjautunut){
             new Thread(){
@@ -1869,6 +1928,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_startPump1ActionPerformed
 
+    /**
+     * Lähettää käskyn pumpun nro 2 käynnistämisestä
+     * @param evt 
+     */
     private void startPump2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPump2ActionPerformed
         if(kirjautunut){
             new Thread(){
@@ -1887,6 +1950,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_startPump2ActionPerformed
 
+    /**
+     * Lähettää käskyn pullotuspumpun nro 1 käynnistämisestä
+     * @param evt 
+     */
     private void startBpump1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBpump1ActionPerformed
         if(kirjautunut){
             try {
@@ -1900,6 +1967,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_startBpump1ActionPerformed
 
+    /**
+     * Lähettää käskyn pullotuspumpun nro 2 käynnistämisestä
+     * @param evt 
+     */
     private void startBpump2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBpump2ActionPerformed
         if(kirjautunut){
             try {
@@ -1913,6 +1984,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_startBpump2ActionPerformed
 
+    /**
+     * Lähettää käskyn kypsytyssäiliön nro 1 varaamisesta
+     * @param evt 
+     */
     private void reserveTank1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank1ActionPerformed
         if(kirjautunut){
             try {
@@ -1926,6 +2001,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reserveTank1ActionPerformed
 
+    /**
+     * Lähettää käskyn kypsytyssäiliön nro 2 varaamisesta
+     * @param evt 
+     */
     private void reserveTank2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank2ActionPerformed
         if(kirjautunut){
             try {
@@ -1939,6 +2018,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reserveTank2ActionPerformed
 
+    /**
+     * Lähettää käskyn kypsytyssäiliön nro 3 varaamisesta
+     * @param evt 
+     */
     private void reserveTank3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank3ActionPerformed
         if(kirjautunut){
             try {
@@ -1952,6 +2035,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reserveTank3ActionPerformed
 
+    /**
+     * Lähettää käskyn kypsytyssäiliön nro 4 varaamisesta
+     * @param evt 
+     */
     private void reserveTank4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank4ActionPerformed
         if(kirjautunut){
             try {
@@ -1965,6 +2052,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reserveTank4ActionPerformed
 
+    /**
+     * Lähettää käskyn kypsytyssäiliön nro 5 varaamisesta
+     * @param evt 
+     */
     private void reserveTank5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank5ActionPerformed
         if(kirjautunut){
             try {
@@ -1978,6 +2069,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reserveTank5ActionPerformed
 
+    /**
+     * Lähettää käskyn kypsytyssäiliön nro 6 varaamisesta
+     * @param evt 
+     */
     private void reserveTank6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank6ActionPerformed
         if(kirjautunut){
             try {
@@ -1991,6 +2086,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reserveTank6ActionPerformed
 
+    /**
+     * Lähettää käskyn kypsytyssäiliön nro 7 varaamisesta
+     * @param evt 
+     */
     private void reserveTank7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank7ActionPerformed
         if(kirjautunut){
             try {
@@ -2004,6 +2103,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reserveTank7ActionPerformed
 
+    /**
+     * Lähettää käskyn kypsytyssäiliön nro 8 varaamisesta
+     * @param evt 
+     */
     private void reserveTank8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank8ActionPerformed
         if(kirjautunut)
             try {
@@ -2016,6 +2119,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reserveTank8ActionPerformed
 
+    /**
+     * Lähettää käskyn kypsytyssäiliön nro 9 varaamisesta
+     * @param evt 
+     */
     private void reserveTank9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank9ActionPerformed
         if(kirjautunut){
             try {
@@ -2029,6 +2136,10 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reserveTank9ActionPerformed
 
+    /**
+     * Lähettää käskyn kypsytyssäiliön nro 10 varaamisesta
+     * @param evt 
+     */
     private void reserveTank10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveTank10ActionPerformed
         if(kirjautunut){
             try {
