@@ -1352,6 +1352,11 @@ public class MainWindow extends javax.swing.JFrame {
             proc2Maara.setText(tila[42]);
             proc3Maara.setText(tila[43]);
             //Päivitetään nappien tilat
+            if(tila[0].equals("false"))
+            {
+                startSiloLoad.setSelected(false);
+            }
+            
             if(tila[5]!=null){
                 if(!tila[5].equals(jm.toString())){
                 reserveSilo1.setSelected(false);
@@ -1361,13 +1366,100 @@ public class MainWindow extends javax.swing.JFrame {
             {
                 reserveSilo1.setSelected(false);
             }
+            
+            if(tila[6]!=null){
+                if(!tila[6].equals(jm.toString())){
+                reserveSilo2.setSelected(false);
+                } 
+            }
+            else
+            {
+                reserveSilo2.setSelected(false);
+            }
+            
+            if(tila[7]!=null){
+                if(!tila[7].equals(jm.toString())){
+                reserveSilo3.setSelected(false);
+                } 
+            }
+            else
+            {
+                reserveSilo3.setSelected(false);
+            }
+            
+            if(tila[8]!=null){
+                if(!tila[8].equals(jm.toString())){
+                reserveSilo4.setSelected(false);
+                } 
+            }
+            else
+            {
+                reserveSilo4.setSelected(false);
+            }
+            
+            if(tila[9].equals("false"))
+            {
+                startProcLoad1.setSelected(false);
+            }
+            
+            if(tila[10].equals("false"))
+            {
+                startProcLoad2.setSelected(false);
+            }
+            
+            if(tila[11]!=null)
+            {
+                if(!tila[11].equals(jm.toString()))
+                {
+                    reserveProc1.setSelected(false);
+                }
+            }else
+            {
+                reserveProc1.setSelected(false);
+            }
+             
+            if(tila[12]!=null)
+            {
+                if(!tila[12].equals(jm.toString()))
+                {
+                    reserveProc2.setSelected(false);
+                }
+            }else
+            {
+                reserveProc2.setSelected(false);
+            }
+            
+            if(tila[13]!=null)
+            {
+                if(!tila[13].equals(jm.toString()))
+                {
+                    reserveProc3.setSelected(false);
+                }
+            }else
+            {
+                reserveProc3.setSelected(false);
+            }
+            
+            if(tila[17].equals("false"))
+            {
+                startPump1.setSelected(false);
+            }
+            
+            if(tila[18].equals("false"))
+            {
+                startPump2.setSelected(false);
+            }
+            
+            if(tila[29].equals("false"))
+            {
+                startBpump1.setSelected(false);
+            }
+            
+            if(tila[30].equals("false"))
+            {
+                startBpump2.setSelected(false);
+            }
             // TODO Muut samaan tapaan!
-            //startSiloLoad.setSelected(false);
-            //reserveSilo2.setSelected(false);
-            //reserveSilo3.setSelected(false);
-            //reserveSilo4.setSelected(false);
-            //startProcLoad1.setSelected(false);
-            //startProcLoad2.setSelected(false);
         } 
         catch (RemoteException ex) {
             System.out.println("Virhe käyttöliittymän päivityksessä");
