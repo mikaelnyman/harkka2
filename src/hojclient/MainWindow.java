@@ -1351,7 +1351,23 @@ public class MainWindow extends javax.swing.JFrame {
             proc1Maara.setText(tila[41]);
             proc2Maara.setText(tila[42]);
             proc3Maara.setText(tila[43]);
-            
+            //Päivitetään nappien tilat
+            if(tila[5]!=null){
+                if(!tila[5].equals(jm.toString())){
+                reserveSilo1.setSelected(false);
+                } 
+            }
+            else
+            {
+                reserveSilo1.setSelected(false);
+            }
+            // TODO Muut samaan tapaan!
+            //startSiloLoad.setSelected(false);
+            //reserveSilo2.setSelected(false);
+            //reserveSilo3.setSelected(false);
+            //reserveSilo4.setSelected(false);
+            //startProcLoad1.setSelected(false);
+            //startProcLoad2.setSelected(false);
         } 
         catch (RemoteException ex) {
             System.out.println("Virhe käyttöliittymän päivityksessä");
