@@ -1459,7 +1459,131 @@ public class MainWindow extends javax.swing.JFrame {
             {
                 startBpump2.setSelected(false);
             }
-            // TODO Muut samaan tapaan!
+            
+            if(tila[31]!=null)
+            {
+                if(!tila[31].equals(jm.toString()))
+                {
+                    reserveTank1.setSelected(false);
+                }
+            }else
+            {
+                reserveTank1.setSelected(false);
+            }
+            
+            if(tila[32]!=null)
+            {
+                if(!tila[32].equals(jm.toString()))
+                {
+                    reserveTank2.setSelected(false);
+                }
+            }else
+            {
+                reserveTank2.setSelected(false);
+            }
+            
+            if(tila[33]!=null)
+            {
+                if(!tila[33].equals(jm.toString()))
+                {
+                    reserveTank3.setSelected(false);
+                }
+            }else
+            {
+                reserveTank3.setSelected(false);
+            }
+            
+            if(tila[34]!=null)
+            {
+                if(!tila[34].equals(jm.toString()))
+                {
+                    reserveTank4.setSelected(false);
+                }
+            }else
+            {
+                reserveTank4.setSelected(false);
+            }
+            
+            if(tila[35]!=null)
+            {
+                if(!tila[35].equals(jm.toString()))
+                {
+                    reserveTank5.setSelected(false);
+                }
+            }else
+            {
+                reserveTank5.setSelected(false);
+            }
+            
+            if(tila[36]!=null)
+            {
+                if(!tila[36].equals(jm.toString()))
+                {
+                    reserveTank6.setSelected(false);
+                }
+            }else
+            {
+                reserveTank6.setSelected(false);
+            }
+            
+            if(tila[37]!=null)
+            {
+                if(!tila[37].equals(jm.toString()))
+                {
+                    reserveTank7.setSelected(false);
+                }
+            }else
+            {
+                reserveTank7.setSelected(false);
+            }
+            
+            if(tila[38]!=null)
+            {
+                if(!tila[38].equals(jm.toString()))
+                {
+                    reserveTank8.setSelected(false);
+                }
+            }else
+            {
+                reserveTank8.setSelected(false);
+            }
+            
+            if(tila[39]!=null)
+            {
+                if(!tila[39].equals(jm.toString()))
+                {
+                    reserveTank9.setSelected(false);
+                }
+            }else
+            {
+                reserveTank9.setSelected(false);
+            }
+            
+            if(tila[40]!=null)
+            {
+                if(!tila[40].equals(jm.toString()))
+                {
+                    reserveTank10.setSelected(false);
+                }
+            }else
+            {
+                reserveTank10.setSelected(false);
+            }
+            
+            if(tila[14].equals("2"))
+            {
+                startProc1.setSelected(false);
+            }
+            
+            if(tila[15].equals("2"))
+            {
+                startProc2.setSelected(false);
+            }
+            
+            if(tila[16].equals("2"))
+            {
+                startProc3.setSelected(false);
+            }
         } 
         catch (RemoteException ex) {
             System.out.println("Virhe käyttöliittymän päivityksessä");
