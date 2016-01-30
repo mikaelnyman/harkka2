@@ -6,6 +6,9 @@ import java.util.logging.Logger;
 
 public class Ruuvikuljetin {
     
+    /**
+     * Tieto siitä, onko ruuvikuljetin päällä
+     */
     private boolean paalla=false;
     
     /**
@@ -40,9 +43,7 @@ public class Ruuvikuljetin {
                 Thread.sleep(100);
                 s.setTayttoaste((int)Math.round(s.getTayttoaste()+KULJETUSNOPEUS*0.1));
             }
-            System.out.println("Täyttö päättyy ja säiliössä on "+s.getTayttoaste());
         } catch (InterruptedException ex) {
-            System.out.println("Täyttö keskeytyi epäonnistuneesti");
             Logger.getLogger(Ruuvikuljetin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

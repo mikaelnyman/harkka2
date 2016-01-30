@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 /**
  * Esittää koko laitosta ja sisältää kaikki osat
- * @author Mikael
+ * @author Mikael, Josia, Lassi
  */
 public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
     /**
@@ -51,30 +51,6 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
     private final Kypsytyssailio[] sailiot;
     
     /**
-     * 
-     * @param jm
-     * @return onko Juomamestari laillinen
-     */
-    public boolean kirjaudu(Juomamestari jm)
-    {
-        if (nimitaulukko == null)
-        {
-            nimitaulukko.add(jm);
-            return true;
-        }else
-        {
-            for(int i=0;i<nimitaulukko.size();i++){
-                if(jm.equals(nimitaulukko.get(i))){
-                    return false;
-                }
-            }
-            nimitaulukko.add(jm);
-            return true;
-        }
-        
-    }
-    
-    /**
      * 2kpl pumppuja kypsystyssäiliöistä pullotukseen
      */
     private final Pumppu[] pullotuspumput;
@@ -99,6 +75,31 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
         pumput=p1;
         sailiot=k;
         pullotuspumput=p2;
+    }
+    
+    /**
+     * Tarkistaa, onko Juomamestarin nimi jo käytössä,
+     * eli voidaanko kirjautuminen hyväksyä.
+     * @param jm
+     * @return onko Juomamestari laillinen
+     */
+    @Override
+    public boolean kirjaudu(Juomamestari jm)
+    {
+        if (nimitaulukko == null)
+        {
+            nimitaulukko.add(jm);
+            return true;
+        }else
+        {
+            for(int i=0;i<nimitaulukko.size();i++){
+                if(jm.equals(nimitaulukko.get(i))){
+                    return false;
+                }
+            }
+            nimitaulukko.add(jm);
+            return true;
+        }  
     }
     
     /**
@@ -250,7 +251,7 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
                 if(!raakaAineKuljettimet[a].isPaalla()){
                     raakaAineKuljettimet[a].setPaalla(true);
                     for(Siilo s:siilot){
-                        if (!s.isOperaatio() && s.getVaraaja() != null && s.getVaraaja().equals(jm)){
+                        if (!s.isOperaatio() && s.getVaraaja() != null && s.getVaraaja().equals(jm) && s.getTayttoaste()>0){
                             s.setOperaatio(true);
                             for(Juomakeitin k:keittimet){
                                 if(k.getVaraaja() != null && !k.isOperaatio() && k.getVaraaja().equals(jm) && k.getTayttoaste()==0){
@@ -296,7 +297,7 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
                 if(!pullotuspumput[a].isPaalla()){
                     pullotuspumput[a].setPaalla(true);
                     for(Kypsytyssailio k:sailiot){
-                        if(k.getVaraaja()!=null && k.getVaraaja().equals(jm) && !k.isOperaatio()){
+                        if(k.getVaraaja()!=null && k.getVaraaja().equals(jm) && !k.isOperaatio() && k.getTayttoaste()>0){
                             k.setOperaatio(true);
                             pullotuspumput[a].pullota(k);
                             k.setVaraaja(null);
@@ -321,7 +322,7 @@ public class Laitos extends UnicastRemoteObject implements LaitosRajapinta{
         new Thread(){
             @Override
             public void run(){
-                if(keittimet[a].getVaraaja()!=null && keittimet[a].getVaraaja().equals(jm) && keittimet[a].getTila()==0 && !keittimet[a].isOperaatio()){
+                if(keittimet[a].getVaraaja()!=null && keittimet[a].getVaraaja().equals(jm) && keittimet[a].getTila()==0 && !keittimet[a].isOperaatio() && keittimet[a].getTayttoaste()>0){
                     keittimet[a].setOperaatio(true);
                     keittimet[a].keita();
                     keittimet[a].setOperaatio(false);

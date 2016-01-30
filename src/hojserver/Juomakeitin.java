@@ -6,16 +6,31 @@ import java.util.logging.Logger;
 
 public class Juomakeitin {
     /**
-     * 
+     * Juomakeittimen varannut Juomamestari
      */
     private Juomamestari varaaja=null;
     
+    /**
+     * Juomakeittimen täyttöaste
+     */
     private int tayttoaste=0;
     
+    /**
+     * Juomakeittimen tilat:
+     * 0=kylmä
+     * 1=kiehuu
+     * 2=valmis
+     */
     private int tila=0;
     
+    /**
+     * Juomakeittimeen mahtuvan viljan maksimimäärä
+     */
     private final int MAXMAARA=2000;
     
+    /**
+     * Onko juomakeittimeen liityvä operaatio kesken
+     */
     private boolean operaatio=false;
 
     /**
@@ -43,17 +58,7 @@ public class Juomakeitin {
      */
     public int getTayttoaste() {
         return tayttoaste;
-    }
-
-    /*
-    public boolean isPaalla() {
-        return paalla;
-    }
-
-    public void setPaalla(boolean paalla) {
-        this.paalla = paalla;
-    }
-*/    
+    }    
 
     /**
      * Asettaa parametrina saadun Juomamestari-olion juomakeittimen varaajaksi.
@@ -70,14 +75,6 @@ public class Juomakeitin {
     public void setTayttoaste(int tayttoaste) {
         this.tayttoaste = tayttoaste;
     }
-
-/*    public boolean isKeitetty() {
-        return keitetty;
-    }
-
-    public void setKeitetty(boolean keitetty) {
-        this.keitetty = keitetty;
-    }*/
 
     /**
     * Palauttaa Juomakeitin-olion tilan.

@@ -1,13 +1,12 @@
 package hojserver;
 
-import hojserver.Laitos;
-import hojserver.Kypsytyssailio;
-import hojserver.Juomakeitin;
+import java.net.MalformedURLException;
 import java.rmi.Naming;
+import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 /**
- *
+ * Palvelin, jossa luodaan Laitos-etäolio.
  * @author Mikael, Josia, Lassi
  */
 public class Palvelin {
@@ -29,8 +28,7 @@ public class Palvelin {
             );
             Registry registry = LocateRegistry.createRegistry(2016);
             Naming.rebind("//localhost:2016/Laitos", viinatehdas);
-            System.out.println("hojclient.Palvelin.kaynnista() suoritettu"); //testausta varten
-        }catch (Exception e){
+        }catch (RemoteException | MalformedURLException e){
             System.out.println("Error: " + e);
         }
     } // kaynnista

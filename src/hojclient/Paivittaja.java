@@ -9,8 +9,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author Josia Nyman
+ * Taustasäije, joka päivittää asiakkaan käyttöliittymää.
+ * @author Mikael, Josia, Lassi
  */
 public class Paivittaja extends Thread{
     private final MainWindow nimi;

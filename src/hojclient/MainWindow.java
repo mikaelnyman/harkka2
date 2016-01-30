@@ -7,6 +7,7 @@ package hojclient;
 
 import hojserver.LaitosRajapinta;
 import hojserver.Juomamestari;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -1635,7 +1636,6 @@ public class MainWindow extends javax.swing.JFrame {
                         laitos = (LaitosRajapinta) registry.lookup(RMIosoite);
                     }
                     if (laitos!=null){
-                        System.out.println("Laitos luotu");
                         if(kirjautunut=laitos.kirjaudu(jm)){
                             paivittaja = new Paivittaja(this);
                             paivittaja.start();
@@ -1647,7 +1647,7 @@ public class MainWindow extends javax.swing.JFrame {
                         System.out.println("Laitos ei toimi");
                     }
                 }
-                catch(Exception e){
+                catch(RemoteException | NotBoundException e){
                     System.out.println(e.getMessage());
                 }
             } else{

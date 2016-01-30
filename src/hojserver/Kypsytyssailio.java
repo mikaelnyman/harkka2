@@ -2,15 +2,25 @@ package hojserver;
 
 
 public class Kypsytyssailio {
-     /**
-     * 
+    
+    /**
+     * Kypsytyssäiliön varaaja
      */
     private Juomamestari varaaja=null;
     
+    /**
+     * Onko kypsytyssäiliöön kohdistuva operaatio käynnissä
+     */
     private boolean operaatio=false;
     
+    /**
+     * Kypsytyssäiliön täyttöaste
+     */
     private int tayttoaste=0;
     
+    /**
+     * Täyttöasteen maksimimäärä
+     */
     private final int MAXMAARA=10000;
     
     /**
@@ -38,7 +48,7 @@ public class Kypsytyssailio {
 
     /**
      * Palauttaa Juomamestari-olion, joka on varannut kypsytyssäiliön.
-     * @return 
+     * @return kypsytysäiliön varaaja
      */
     public Juomamestari getVaraaja() {
         return varaaja;
@@ -46,7 +56,7 @@ public class Kypsytyssailio {
 
     /**
      * Palauttaa kypsytyssäiliön täyttöasteen.
-     * @return 
+     * @return täyttöaste
      */
     public int getTayttoaste() {
         return tayttoaste;

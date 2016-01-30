@@ -3,14 +3,23 @@ package hojserver;
 public class Siilo {
     
      /**
-     * 
+     * Siilon varannut Juomamestari
      */
     private Juomamestari varaaja=null;
     
+    /**
+     * Siilossa olevan viljan määrä kiloina
+     */
     private int tayttoaste=0;
     
+    /**
+     * Siilon sisällön maksimimäärä kiloina
+     */
     private final int MAXMAARA=10000;
     
+    /**
+     * Onko siiloon kohdistuva operaatio käynnissä
+     */
     private boolean operaatio=false;
 
     /**

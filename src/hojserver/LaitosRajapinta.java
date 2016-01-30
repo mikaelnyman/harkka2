@@ -9,8 +9,8 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 /**
- *
- * @author Mikael
+ * RMI-tekniikkaa varten luotu Laitos-olion rajapinta.
+ * @author Mikael, Josia, Lassi
  */
 public interface LaitosRajapinta extends Remote{
     public boolean kirjaudu(Juomamestari jm) throws RemoteException;

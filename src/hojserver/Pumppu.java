@@ -6,9 +6,13 @@ import java.util.logging.Logger;
 
 public class Pumppu {
     
-    private boolean paalla=false;
     /**
-     * Yksikkö l/s
+     * Onko pumppu käynnissä
+     */
+    private boolean paalla=false;
+    
+    /**
+     * Pumpun kuljetuskapasiteetti, yksikkö l/s
      */
     private final int KULJETUSNOPEUS=500;
 
@@ -39,7 +43,9 @@ public class Pumppu {
     /**
      * Simuloi pumppaustapahtumaa. Parametrina annetaan pumpattava määrä.
      * Pumppaustapahtumaa simuloidaan odottamalla pumppaukseen kuluva aika.
-     * @param maara 
+     * @param maara pumpattava määrä
+     * @param jk Juomakeitein, josta pumpataan
+     * @param ks Kypsytyssäiliö, johon pumpataan
      */
     public void pumppaa(int maara, Juomakeitin jk, Kypsytyssailio ks){
         try {
