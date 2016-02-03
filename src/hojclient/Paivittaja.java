@@ -15,7 +15,6 @@ import java.util.logging.Logger;
 public class Paivittaja extends Thread{
     private final MainWindow nimi;
     public Paivittaja (MainWindow nimi){
-        setDaemon(true);
         this.nimi = nimi;
     }
     /**

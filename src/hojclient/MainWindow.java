@@ -1638,6 +1638,7 @@ public class MainWindow extends javax.swing.JFrame {
                     if (laitos!=null){
                         if(kirjautunut=laitos.kirjaudu(jm)){
                             paivittaja = new Paivittaja(this);
+                            paivittaja.setDaemon(true);
                             paivittaja.start();
                         }else{
                             tekstikentta.setText("Nimi jo käytössä");
